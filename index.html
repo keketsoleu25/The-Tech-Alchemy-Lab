@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#05040F" />
+  <title>The Tech Alchemy Lab | Turning Code into Digital Gold</title>
+  <meta name="description" content="Premium web development & digital transformation agency based in Johannesburg, South Africa. We turn ordinary businesses into high-performing digital powerhouses." />
+  <meta name="keywords" content="web development, digital agency, Johannesburg, South Africa, digital transformation, website design" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+
+<!-- ============================================
+     ANIMATED GRID BACKGROUND
+============================================ -->
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- ============================================
+     NAVIGATION
+============================================ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#" class="nav-logo" onclick="showPage('home'); return false;" aria-label="The Tech Alchemy Lab - Home">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00F5FF"/>
+                <stop offset="100%" stop-color="#C026D3"/>
+              </linearGradient>
+            </defs>
+            <!-- Droplet shape -->
+            <path d="M19 3 C19 3, 32 16, 32 24 C32 31.18 26.18 36 19 36 C11.82 36 6 31.18 6 24 C6 16, 19 3, 19 3Z" stroke="url(#logoGrad)" stroke-width="1.5" fill="rgba(0,245,255,0.06)"/>
+            <!-- Circuit lines inside -->
+            <line x1="19" y1="14" x2="19" y2="28" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.6"/>
+            <line x1="13" y1="22" x2="25" y2="22" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.6"/>
+            <circle cx="19" cy="22" r="2" fill="#00F5FF" opacity="0.9"/>
+            <circle cx="19" cy="14" r="1" fill="#C026D3" opacity="0.7"/>
+            <circle cx="13" cy="22" r="1" fill="#22D3EE" opacity="0.7"/>
+            <circle cx="25" cy="22" r="1" fill="#22D3EE" opacity="0.7"/>
+          </svg>
+        </div>
+        <span>Tech Alchemy Lab</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="nav-links" role="list">
+        <li><a href="#" onclick="showPage('home'); return false;" class="active" id="nav-home">Home</a></li>
+        <li><a href="#" onclick="showPage('services'); return false;" id="nav-services">Services</a></li>
+        <li><a href="#" onclick="showPage('about'); return false;" id="nav-about">About</a></li>
+        <li><a href="#" onclick="showPage('portfolio'); return false;" id="nav-portfolio">Portfolio</a></li>
+        <li><a href="#" onclick="showPage('contact'); return false;" class="nav-cta" id="nav-contact">Get a Quote</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mobile-close" id="mobileClose" aria-label="Close mobile menu">✕</button>
+  <a href="#" onclick="showPage('home'); closeMobile(); return false;">Home</a>
+  <a href="#" onclick="showPage('services'); closeMobile(); return false;">Services</a>
+  <a href="#" onclick="showPage('about'); closeMobile(); return false;">About</a>
+  <a href="#" onclick="showPage('portfolio'); closeMobile(); return false;">Portfolio</a>
+  <a href="#" onclick="showPage('contact'); closeMobile(); return false;" style="color: var(--cyan);">Get a Quote</a>
+</div>
+
+<!-- ============================================
+     HOME PAGE
+============================================ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="orb hero-orb-1" aria-hidden="true"></div>
+    <div class="orb hero-orb-2" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge" aria-label="Johannesburg's premier digital agency">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Johannesburg's Premier Digital Agency
+        </div>
+        <h1 class="hero-headline" id="hero-heading">
+          We Turn<br>
+          Code into<br>
+          <span class="gradient-text">Digital Gold.</span>
+        </h1>
+        <p class="hero-sub">
+          The Tech Alchemy Lab transforms ordinary businesses into high-performing digital powerhouses. Through strategic craftsmanship and modern technology, we create experiences that convert and captivate.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showPage('contact')">
+            <span>Start Your Transformation</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <button class="btn-outline" onclick="showPage('portfolio')">
+            View Our Work
+          </button>
+        </div>
+        <div class="hero-stats" aria-label="Agency statistics">
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text-gold">50+</div>
+            <div class="hero-stat-label">Projects Delivered</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text-gold">98%</div>
+            <div class="hero-stat-label">Client Satisfaction</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text-gold">4yr</div>
+            <div class="hero-stat-label">Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text-gold">🇿🇦</div>
+            <div class="hero-stat-label">Based in Joburg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">What We Alchemise</p>
+        <h2 class="section-title" id="services-heading">
+          Services Built for<br>
+          <span class="gradient-text">Digital Dominance</span>
+        </h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">🌐</div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">High-performance websites and web applications built with cutting-edge frameworks. From sleek landing pages to complex e-commerce platforms — engineered to convert.</p>
+          <div class="service-tags">
+            <span class="service-tag">Next.js</span>
+            <span class="service-tag">React</span>
+            <span class="service-tag">TypeScript</span>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">🎨</div>
+          <h3 class="service-title">Brand & UI/UX Design</h3>
+          <p class="service-desc">Visual identities and user experiences that command attention. We craft premium design systems that make your brand unforgettable in the digital landscape.</p>
+          <div class="service-tags">
+            <span class="service-tag">Figma</span>
+            <span class="service-tag">Brand Identity</span>
+            <span class="service-tag">UI Systems</span>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">📱</div>
+          <h3 class="service-title">Mobile Apps</h3>
+          <p class="service-desc">Native-quality mobile experiences for iOS and Android. React Native and cross-platform solutions that feel premium on every device.</p>
+          <div class="service-tags">
+            <span class="service-tag">React Native</span>
+            <span class="service-tag">iOS</span>
+            <span class="service-tag">Android</span>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">⚡</div>
+          <h3 class="service-title">Digital Strategy</h3>
+          <p class="service-desc">Data-driven digital transformation roadmaps. We analyse your market, competitors and audience to forge strategies that generate measurable growth.</p>
+          <div class="service-tags">
+            <span class="service-tag">SEO</span>
+            <span class="service-tag">Analytics</span>
+            <span class="service-tag">Growth</span>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">🛒</div>
+          <h3 class="service-title">E-Commerce Solutions</h3>
+          <p class="service-desc">Revenue-generating online stores built for scale. From WooCommerce to custom checkout flows — we build shops that sell while you sleep.</p>
+          <div class="service-tags">
+            <span class="service-tag">Shopify</span>
+            <span class="service-tag">WooCommerce</span>
+            <span class="service-tag">Payments</span>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">🔧</div>
+          <h3 class="service-title">Ongoing Retainer</h3>
+          <p class="service-desc">Your dedicated digital partner on demand. Monthly retainers for continuous development, optimisation, and strategic support — always in your corner.</p>
+          <div class="service-tags">
+            <span class="service-tag">Maintenance</span>
+            <span class="service-tag">Support</span>
+            <span class="service-tag">Updates</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALCHEMY ADVANTAGE -->
+  <section class="section" style="background: var(--bg-secondary)" aria-labelledby="advantage-heading">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">The Alchemy Advantage</p>
+        <h2 class="section-title" id="advantage-heading">
+          Why Businesses Choose<br>
+          <span class="gradient-text">The Lab</span>
+        </h2>
+        <p class="text-muted" style="margin-top: 16px; max-width: 540px; font-size: 17px; line-height: 1.8;">We don't just build digital products — we engineer outcomes. Every decision is driven by strategy, every pixel by purpose.</p>
+      </div>
+      <div class="advantage-grid">
+        <div class="advantage-card reveal">
+          <div class="advantage-num" aria-hidden="true">01</div>
+          <div>
+            <h3 class="advantage-title">African-First Perspective</h3>
+            <p class="advantage-desc">We understand the South African market — the culture, the constraints, the opportunities. Built locally, competitive globally. We speak your customer's language.</p>
+          </div>
+        </div>
+        <div class="advantage-card reveal">
+          <div class="advantage-num" aria-hidden="true">02</div>
+          <div>
+            <h3 class="advantage-title">Conversion-Obsessed Design</h3>
+            <p class="advantage-desc">Beautiful websites that don't convert are expensive decorations. Every layout, CTA, and flow we create is tested and optimised to turn visitors into clients.</p>
+          </div>
+        </div>
+        <div class="advantage-card reveal">
+          <div class="advantage-num" aria-hidden="true">03</div>
+          <div>
+            <h3 class="advantage-title">Premium Tech Stack</h3>
+            <p class="advantage-desc">We use only battle-tested, cutting-edge technologies. Next.js, TypeScript, Tailwind — the same stack powering global digital leaders, now available to your business.</p>
+          </div>
+        </div>
+        <div class="advantage-card reveal">
+          <div class="advantage-num" aria-hidden="true">04</div>
+          <div>
+            <h3 class="advantage-title">Transparent Partnership</h3>
+            <p class="advantage-desc">No mystery pricing, no disappearing acts. You get full visibility into timelines, costs and progress. We're your digital partners, not just a vendor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 0;">
+        <p class="section-label" style="justify-content: center;">The Alchemy Process</p>
+        <h2 class="section-title" id="process-heading">How We Work<br><span class="gradient-text">Our Craft</span></h2>
+        <p class="text-muted" style="margin-top: 16px; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 16px;">From raw idea to refined digital gold — our process is deliberate, proven, and built for results.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="process-num" aria-label="Step 1">01</div>
+          <h3 class="process-step-title">Discovery</h3>
+          <p class="process-step-desc">We immerse ourselves in your business, goals and market. Deep research, competitor analysis, and strategic clarity before a single line of code is written.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-num" aria-label="Step 2">02</div>
+          <h3 class="process-step-title">Alchemy Blueprint</h3>
+          <p class="process-step-desc">Architecture meets artistry. We design wireframes, prototypes and technical specifications that map the exact path to your digital gold.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-num" aria-label="Step 3">03</div>
+          <h3 class="process-step-title">Forge & Craft</h3>
+          <p class="process-step-desc">Our developers and designers collaborate in sprints. You see progress in real-time with regular check-ins, demos and revisions at every milestone.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-num" aria-label="Step 4">04</div>
+          <h3 class="process-step-title">Launch & Scale</h3>
+          <p class="process-step-desc">Rigorous QA, performance optimisation, SEO setup, and a launch that makes noise. Then we grow with you — analytics, iterations, and ongoing alchemisation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO TEASER -->
+  <section class="section" style="background: var(--bg-secondary)" aria-labelledby="portfolio-teaser-heading">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px;" class="reveal">
+        <div>
+          <p class="section-label">Featured Work</p>
+          <h2 class="section-title" id="portfolio-teaser-heading">Digital Gold<br><span class="gradient-text">We've Forged</span></h2>
+        </div>
+        <button class="btn-outline" onclick="showPage('portfolio')">All Projects →</button>
+      </div>
+      <div class="portfolio-grid">
+        <article class="portfolio-card featured reveal">
+          <div class="portfolio-thumb" style="aspect-ratio: 16/7;">
+            <div class="portfolio-thumb-inner" style="background: linear-gradient(135deg, #0D0B1E, #1a0a2e);">
+              <div style="text-align: center;">
+                <div style="font-size: 48px; margin-bottom: 12px;">🏪</div>
+                <div style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--cyan);">Luxe E-Commerce Platform</div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <button class="btn-primary" style="font-size: 13px; padding: 10px 24px;" onclick="showPage('portfolio')">
+              <span>View Case Study</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats">
+              <span class="portfolio-cat">E-Commerce</span>
+              <span class="portfolio-cat">Next.js</span>
+              <span class="portfolio-cat">Payments</span>
+            </div>
+            <h3 class="portfolio-name">Luxe Fashion SA</h3>
+            <p class="portfolio-desc-short">Premium e-commerce platform with 340% conversion increase post-launch</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-inner" style="background: linear-gradient(135deg, #0a1a2e, #0d0b1e);">
+              <div style="font-size: 44px;">🏥</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <button class="btn-primary" style="font-size: 13px; padding: 10px 24px;" onclick="showPage('portfolio')">
+              <span>View Case Study</span>
+            </button>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats">
+              <span class="portfolio-cat">Web App</span>
+              <span class="portfolio-cat">Healthcare</span>
+            </div>
+            <h3 class="portfolio-name">MediConnect</h3>
+            <p class="portfolio-desc-short">Patient booking platform serving 12,000+ monthly users</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-inner" style="background: linear-gradient(135deg, #1a0a1e, #0d0b1e);">
+              <div style="font-size: 44px;">🏗️</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <button class="btn-primary" style="font-size: 13px; padding: 10px 24px;" onclick="showPage('portfolio')">
+              <span>View Case Study</span>
+            </button>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats">
+              <span class="portfolio-cat">Branding</span>
+              <span class="portfolio-cat">Website</span>
+            </div>
+            <h3 class="portfolio-name">Apex Constructions</h3>
+            <p class="portfolio-desc-short">Full rebrand + website generating 5× more enquiries</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 0;">
+        <p class="section-label" style="justify-content: center;">Client Testimony</p>
+        <h2 class="section-title" id="testimonials-heading">What Our<br><span class="gradient-text">Clients Say</span></h2>
+      </div>
+      <div class="testimonials-grid" style="margin-top: 60px;">
+        <article class="testimonial-card reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "Keketso and the team didn't just build us a website — they built us a sales machine. Our online revenue doubled within 3 months of launch. True digital alchemy."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">TM</div>
+            <div>
+              <div class="testimonial-name">Thandi Molefe</div>
+              <div class="testimonial-role">CEO, Luxe Fashion SA · Sandton</div>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "Professional, creative, and truly understands what it means to build for the South African market. Delivered on time, on budget, and far beyond our expectations."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--magenta), var(--purple));" aria-hidden="true">SK</div>
+            <div>
+              <div class="testimonial-name">Sipho Khumalo</div>
+              <div class="testimonial-role">Founder, MediConnect · Johannesburg</div>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+          </div>
+          <blockquote class="testimonial-quote">
+            "The rebrand and new website transformed how people perceive our company. We now look and feel like the premium brand we've always been. Highly recommend The Alchemist."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--gold), var(--electric));" aria-hidden="true">NP</div>
+            <div>
+              <div class="testimonial-name">Nompumelelo Petersen</div>
+              <div class="testimonial-role">MD, Apex Constructions · Pretoria</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-bg" aria-hidden="true"></div>
+      <div class="cta-inner reveal">
+        <p class="section-label" style="justify-content: center;">Ready to Transform?</p>
+        <h2 class="cta-title" id="cta-heading">
+          Your Digital Gold<br>
+          <span class="gradient-text">Awaits.</span>
+        </h2>
+        <p class="cta-sub">Stop leaving money on the table with an underperforming digital presence. Let's create something extraordinary together.</p>
+        <div class="cta-actions">
+          <button class="btn-primary" onclick="showPage('contact')">
+            <span>Book a Free Consultation</span>
+            <span aria-hidden="true">✦</span>
+          </button>
+          <button class="btn-outline" onclick="showPage('services')">
+            View Pricing
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end #page-home -->
+
+<!-- ============================================
+     SERVICES PAGE
+============================================ -->
+<div id="page-services" class="page">
+  <section class="page-hero" aria-labelledby="services-page-heading">
+    <div class="orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(126,34,206,0.25),transparent 70%);top:-200px;right:-100px;" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <p class="section-label" style="justify-content: center;">Services & Investment</p>
+      <h1 class="section-title" id="services-page-heading">
+        Choose Your<br>
+        <span class="gradient-text">Alchemy Level</span>
+      </h1>
+      <p class="text-muted" style="margin-top:20px;font-size:18px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.8;">
+        Every business is at a different stage of its transformation. We have an alchemy package designed exactly for where you are — and where you're going.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="section-sm" aria-labelledby="services-detail-heading">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Core Services</p>
+        <h2 class="section-title" id="services-detail-heading">What We<br><span class="gradient-text">Master</span></h2>
+      </div>
+      <div class="services-detail">
+        <div class="services-detail-card reveal">
+          <div class="services-detail-icon" aria-hidden="true">🌐</div>
+          <h3 class="services-detail-title">Web Development</h3>
+          <p class="services-detail-desc">From marketing sites to complex web applications, we build fast, scalable, and conversion-focused digital products using the modern tech stack.</p>
+          <ul class="services-detail-list" aria-label="Web development services">
+            <li>Next.js / React web applications</li>
+            <li>Landing pages & marketing sites</li>
+            <li>E-commerce (Shopify, WooCommerce, custom)</li>
+            <li>API integrations & backend systems</li>
+            <li>Performance optimisation & Core Web Vitals</li>
+          </ul>
+        </div>
+        <div class="services-detail-card reveal">
+          <div class="services-detail-icon" aria-hidden="true">🎨</div>
+          <h3 class="services-detail-title">Brand & Design</h3>
+          <p class="services-detail-desc">Premium visual identity and UX design that positions your brand as the obvious premium choice in your market — locally and globally.</p>
+          <ul class="services-detail-list" aria-label="Brand and design services">
+            <li>Logo & visual identity design</li>
+            <li>Brand guidelines & style systems</li>
+            <li>UI/UX wireframing & prototyping</li>
+            <li>Design system creation</li>
+            <li>Social media kit & digital assets</li>
+          </ul>
+        </div>
+        <div class="services-detail-card reveal">
+          <div class="services-detail-icon" aria-hidden="true">📱</div>
+          <h3 class="services-detail-title">Mobile Applications</h3>
+          <p class="services-detail-desc">Cross-platform mobile apps that feel native on iOS and Android, built with React Native and designed for the African mobile-first user.</p>
+          <ul class="services-detail-list" aria-label="Mobile application services">
+            <li>React Native cross-platform apps</li>
+            <li>App Store & Play Store deployment</li>
+            <li>Push notifications & offline support</li>
+            <li>Mobile payment integrations (PayFast, Ozow)</li>
+            <li>App maintenance & updates</li>
+          </ul>
+        </div>
+        <div class="services-detail-card reveal">
+          <div class="services-detail-icon" aria-hidden="true">📊</div>
+          <h3 class="services-detail-title">Digital Strategy & SEO</h3>
+          <p class="services-detail-desc">Data-led digital strategies that grow your organic visibility, attract quality leads, and build sustainable competitive advantage.</p>
+          <ul class="services-detail-list" aria-label="Digital strategy and SEO services">
+            <li>Technical SEO audits & implementation</li>
+            <li>Google Analytics 4 setup & dashboards</li>
+            <li>Competitor analysis & positioning</li>
+            <li>Content strategy & blog architecture</li>
+            <li>Monthly performance reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING PACKAGES -->
+  <section class="section" style="background:var(--bg-secondary)" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <p class="section-label" style="justify-content:center;">Investment Packages</p>
+        <h2 class="section-title" id="pricing-heading">
+          Transparent Pricing<br>
+          <span class="gradient-text">Zero Surprises</span>
+        </h2>
+        <p class="text-muted" style="margin-top:16px;font-size:16px;max-width:460px;margin-left:auto;margin-right:auto;">All packages include a complimentary 30-minute strategy call. Prices in South African Rand (ZAR) — invoicing available in ZAR, USD and EUR.</p>
+      </div>
+      <div class="pricing-grid reveal">
+
+        <!-- LAUNCH -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-tier">LAUNCH</div>
+            <div class="pricing-name">Launchpad</div>
+            <div class="pricing-tagline">Perfect for startups & side hustles ready to establish their digital presence.</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">R</span>
+              <span class="pricing-amount">12,500</span>
+            </div>
+            <div style="margin-top:6px;font-size:13px;color:var(--text-muted);">Once-off project</div>
+          </div>
+          <div class="pricing-body">
+            <ul class="pricing-features" aria-label="Launchpad package features">
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> 5-page responsive website</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Mobile-first design</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Contact form setup</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Basic SEO setup</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Google Analytics integration</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> 2 rounds of revisions</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> 30-day post-launch support</li>
+              <li class="pricing-feature x"><span class="pricing-feature-check" aria-label="Not included"></span> E-commerce functionality</li>
+              <li class="pricing-feature x"><span class="pricing-feature-check" aria-label="Not included"></span> Custom animations</li>
+              <li class="pricing-feature x"><span class="pricing-feature-check" aria-label="Not included"></span> Brand identity design</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <button class="btn-outline" onclick="showPage('contact')" style="width:100%;justify-content:center;">Get Started</button>
+          </div>
+        </div>
+
+        <!-- GROWTH — FEATURED -->
+        <div class="pricing-card featured" style="position:relative;">
+          <div class="pricing-badge" aria-label="Most Popular">✦ MOST POPULAR</div>
+          <div class="pricing-header" style="padding-top:52px;">
+            <div class="pricing-tier">GROWTH</div>
+            <div class="pricing-name">Accelerator</div>
+            <div class="pricing-tagline">For established businesses ready to dominate their digital space.</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">R</span>
+              <span class="pricing-amount">28,000</span>
+            </div>
+            <div style="margin-top:6px;font-size:13px;color:var(--text-muted);">Once-off project</div>
+          </div>
+          <div class="pricing-body">
+            <ul class="pricing-features" aria-label="Accelerator package features">
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Up to 12-page website</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Custom UI/UX design</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Advanced animations</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> E-commerce (up to 50 products)</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Full SEO implementation</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> CMS integration</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> 4 rounds of revisions</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> 60-day post-launch support</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Performance monitoring setup</li>
+              <li class="pricing-feature x"><span class="pricing-feature-check" aria-label="Not included"></span> Custom integrations</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <button class="btn-primary" onclick="showPage('contact')" style="width:100%;justify-content:center;">
+              <span>Start Accelerating</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ENTERPRISE -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-tier">ENTERPRISE</div>
+            <div class="pricing-name">Transmutation</div>
+            <div class="pricing-tagline">Full digital transformation for enterprises demanding excellence.</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">R</span>
+              <span class="pricing-amount">65,000</span>
+            </div>
+            <div style="margin-top:6px;font-size:13px;color:var(--text-muted);">Once-off project</div>
+          </div>
+          <div class="pricing-body">
+            <ul class="pricing-features" aria-label="Transmutation package features">
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Unlimited pages</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Full brand identity design</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Custom web application</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Advanced e-commerce</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Custom API integrations</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Mobile app (React Native)</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Dedicated project manager</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> 90-day post-launch support</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Monthly strategy sessions</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Priority turnaround</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <button class="btn-outline" onclick="showPage('contact')" style="width:100%;justify-content:center;">Request Proposal</button>
+          </div>
+        </div>
+
+        <!-- RETAINER -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-tier">RETAINER</div>
+            <div class="pricing-name">The Philosopher's Stone</div>
+            <div class="pricing-tagline">Your dedicated digital partner. Always on, always optimising.</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">R</span>
+              <span class="pricing-amount">8,500</span>
+              <span class="pricing-period">/month</span>
+            </div>
+            <div style="margin-top:6px;font-size:13px;color:var(--text-muted);">Minimum 3-month commitment</div>
+          </div>
+          <div class="pricing-body">
+            <ul class="pricing-features" aria-label="Philosopher's Stone retainer features">
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> 40 hours/month dev & design</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Priority support (24hr response)</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Monthly strategy session</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Ongoing SEO & content</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Performance reporting</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Hosting management</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> Security & updates</li>
+              <li class="pricing-feature"><span class="pricing-feature-check" aria-label="Included"></span> A/B testing & optimisation</li>
+              <li class="pricing-feature x"><span class="pricing-feature-check" aria-label="Not included"></span> New project builds included</li>
+              <li class="pricing-feature x"><span class="pricing-feature-check" aria-label="Not included"></span> Social media management</li>
+            </ul>
+          </div>
+          <div class="pricing-footer">
+            <button class="btn-outline" onclick="showPage('contact')" style="width:100%;justify-content:center;">Enquire Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="text-align:center;margin-top:48px;padding:32px;border-radius:var(--radius-md);background:rgba(0,245,255,0.04);border:1px solid rgba(0,245,255,0.12);">
+        <p style="font-size:15px;color:var(--text-muted);margin-bottom:16px;">💡 Not sure which package suits you? Every engagement starts with a free 30-minute strategy call where we'll map your exact needs — no sales pressure, just honest advice.</p>
+        <button class="btn-primary" onclick="showPage('contact')">
+          <span>Book Your Free Strategy Call</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</div><!-- end #page-services -->
+
+<!-- ============================================
+     ABOUT PAGE
+============================================ -->
+<div id="page-about" class="page">
+  <section class="about-hero" aria-labelledby="about-heading">
+    <div class="orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(192,38,211,0.2),transparent 70%);top:-200px;left:-200px;" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div>
+          <p class="section-label">The Alchemist's Story</p>
+          <h1 class="about-title" id="about-heading">
+            Meet <span class="gradient-text">Keketso</span><br>
+            "The Alchemist" Leu
+          </h1>
+          <p class="about-desc">
+            Born and raised in Johannesburg, Keketso Leu grew up watching South African businesses struggle to compete in an increasingly digital world — not because of lack of ambition, but lack of access to world-class digital craft.
+          </p>
+          <p class="about-desc">
+            That observation became an obsession. After years honing skills in full-stack development, UI/UX design, and digital strategy — working on projects across South Africa, Europe, and the US — Keketso founded The Tech Alchemy Lab with a single mission: to give African businesses the same premium digital weapons that global giants use.
+          </p>
+          <div style="padding: 24px; border-radius: var(--radius-md); background: rgba(0,245,255,0.04); border-left: 3px solid var(--cyan); margin-top: 24px;">
+            <p style="font-size: 18px; font-style: italic; color: var(--white); line-height: 1.7;">"I don't just write code — I transmute ideas into digital gold. Every project is an act of alchemy."</p>
+            <p style="margin-top: 12px; font-size: 14px; color: var(--cyan); font-family: var(--font-mono);">— Keketso Leu, Founder & Lead Alchemist</p>
+          </div>
+          <div style="margin-top: 32px;">
+            <div class="founder-name">Keketso "The Alchemist" Leu</div>
+            <div class="founder-title">Founder · Lead Developer · Brand Strategist</div>
+          </div>
+        </div>
+        <div class="about-avatar reveal">
+          <div style="width: 380px; height: 460px; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(126,34,206,0.2), rgba(0,245,255,0.1)); border: 1px solid rgba(0,245,255,0.25); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+            <img src="images/profile_photo.jpg" alt="Keketso Leu" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);position:relative;z-index:2;" />
+            <div style="position: absolute; left: 16px; bottom: 18px; z-index:3; color: var(--white);">
+              <div style="font-family: var(--font-display); font-size: 22px; font-weight: 800;">The Alchemist</div>
+              <div style="font-size: 14px; color: var(--cyan); font-family: var(--font-mono); margin-top: 6px;">Johannesburg, South Africa 🇿🇦</div>
+            </div>
+            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, transparent 60%, rgba(0,245,255,0.05));" aria-hidden="true"></div>
+            <!-- Circuit pattern overlay -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.1;" viewBox="0 0 380 460" fill="none" aria-hidden="true">
+              <line x1="0" y1="230" x2="380" y2="230" stroke="#00F5FF" stroke-width="0.5"/>
+              <line x1="190" y1="0" x2="190" y2="460" stroke="#00F5FF" stroke-width="0.5"/>
+              <circle cx="190" cy="230" r="80" stroke="#00F5FF" stroke-width="0.5"/>
+              <circle cx="190" cy="230" r="140" stroke="#C026D3" stroke-width="0.5"/>
+              <circle cx="50" cy="50" r="4" fill="#00F5FF"/>
+              <circle cx="330" cy="50" r="4" fill="#C026D3"/>
+              <circle cx="50" cy="410" r="4" fill="#22D3EE"/>
+              <circle cx="330" cy="410" r="4" fill="#00F5FF"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section" style="background: var(--bg-secondary)" aria-labelledby="philosophy-heading">
+    <div class="container">
+      <div class="reveal" style="max-width: 720px; margin: 0 auto; text-align: center;">
+        <p class="section-label" style="justify-content: center;">Philosophy</p>
+        <h2 class="section-title" id="philosophy-heading">The Art of<br><span class="gradient-text">Digital Alchemy</span></h2>
+        <p style="margin-top: 20px; font-size: 18px; color: var(--text-muted); line-height: 1.9;">
+          In ancient alchemy, the goal wasn't just turning metal to gold — it was the pursuit of perfection through knowledge, patience, and craft. We apply that same philosophy to every digital product we create.
+        </p>
+        <p style="margin-top: 16px; font-size: 18px; color: var(--text-muted); line-height: 1.9;">
+          We believe that technology is the modern philosopher's stone — and that <em style="color: var(--white);">every South African business</em> deserves access to its transformative power. Not as a luxury, but as a right.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section" aria-labelledby="values-heading">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Core Values</p>
+        <h2 class="section-title" id="values-heading">What We<br><span class="gradient-text">Stand For</span></h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon" aria-hidden="true">🔥</div>
+          <h3 class="value-title">Craft Over Speed</h3>
+          <p class="value-desc">We'd rather deliver one excellent product than five mediocre ones. Quality is non-negotiable — we take the time to get it right because your reputation depends on it.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon" aria-hidden="true">🤝</div>
+          <h3 class="value-title">Partnership, Not Transactional</h3>
+          <p class="value-desc">When you hire us, you get a genuine partner invested in your success. We celebrate your wins, learn from your challenges, and grow alongside your business.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon" aria-hidden="true">🌍</div>
+          <h3 class="value-title">African Excellence</h3>
+          <p class="value-desc">Proudly South African, internationally competitive. We believe Africa's time in the digital economy is now — and we're building the infrastructure for that future.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon" aria-hidden="true">📊</div>
+          <h3 class="value-title">Results Above Aesthetics</h3>
+          <p class="value-desc">Beautiful design means nothing if it doesn't drive business results. Every element we create is tested against the question: does this help the business grow?</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon" aria-hidden="true">🔓</div>
+          <h3 class="value-title">Radical Transparency</h3>
+          <p class="value-desc">No hidden costs, no vague timelines, no mystery black boxes. You always know exactly where your project stands and what every rand is being spent on.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon" aria-hidden="true">⚗️</div>
+          <h3 class="value-title">Continuous Alchemisation</h3>
+          <p class="value-desc">The digital landscape evolves daily. We're relentless learners — always experimenting, always upskilling, always bringing the latest and most effective techniques to your project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY TIMELINE -->
+  <section class="section" style="background: var(--bg-secondary)" aria-labelledby="journey-heading">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">The Journey</p>
+        <h2 class="section-title" id="journey-heading">From Developer<br><span class="gradient-text">to Alchemist</span></h2>
+      </div>
+      <div style="max-width: 680px; margin-top: 60px;">
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2019</div>
+            <h3 class="timeline-title">The Spark</h3>
+            <p class="timeline-desc">Started as a B.Sc Computer Science student, at NWU Vaal triangle Campus.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2020–2021</div>
+            <h3 class="timeline-title">The Education</h3>
+            <p class="timeline-desc">Deep dive into problem solving, mathematics, economics, statistics and more.. </p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2022</div>
+            <h3 class="timeline-title">Code Space Academy</h3>
+            <p class="timeline-desc">Deep-dived into modern frameworks — React, Next.js, TypeScript. Simultaneously studied UX design, digital marketing, and conversion rate optimisation. Built 20+ projects, each teaching a new lesson in the alchemy of digital success.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2023</div>
+            <h3 class="timeline-title">The Lab is Born</h3>
+            <p class="timeline-desc">Officially founded The Tech Alchemy Lab. First major client deliveries — a full e-commerce platform for a Westonaria fashion brand and a creche website. Both exceeded client targets within 90 days.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2024–Present</div>
+            <h3 class="timeline-title">Growing the Craft</h3>
+            <p class="timeline-desc">50+ projects delivered. A growing roster of SA's most ambitious businesses. Expanding the team, refining the process, and continuing to forge digital gold for brands across South Africa and beyond. The great alchemisation continues.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-labelledby="about-cta-heading">
+    <div class="container">
+      <div class="cta-bg" aria-hidden="true"></div>
+      <div class="cta-inner reveal">
+        <h2 class="cta-title" id="about-cta-heading">
+          Ready to Work<br>
+          <span class="gradient-text">With The Alchemist?</span>
+        </h2>
+        <p class="cta-sub">Every great transformation starts with a conversation. Let's talk about your business and what we can forge together.</p>
+        <div class="cta-actions">
+          <button class="btn-primary" onclick="showPage('contact')">
+            <span>Book Your Consultation</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- end #page-about -->
+
+<!-- ============================================
+     PORTFOLIO PAGE
+============================================ -->
+<div id="page-portfolio" class="page">
+  <section class="page-hero" aria-labelledby="portfolio-heading">
+    <div class="orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(0,245,255,0.15),transparent 70%);top:-200px;left:-100px;" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <p class="section-label" style="justify-content:center;">Our Work</p>
+      <h1 class="section-title" id="portfolio-heading">
+        Digital Gold<br>
+        <span class="gradient-text">We've Forged</span>
+      </h1>
+      <p class="text-muted" style="margin-top:20px;font-size:18px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8;">
+        Each project is a unique act of alchemy — transforming business challenges into exceptional digital outcomes.
+      </p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO FILTER & GRID -->
+  <section class="section-sm" aria-labelledby="portfolio-grid-heading">
+    <div class="container">
+      <!-- Filter Tabs -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;" role="group" aria-label="Filter projects by category">
+        <button class="portfolio-filter active" data-filter="all" onclick="filterPortfolio('all', this)">All Work</button>
+        <button class="portfolio-filter" data-filter="web" onclick="filterPortfolio('web', this)">Web Dev</button>
+        <button class="portfolio-filter" data-filter="ecom" onclick="filterPortfolio('ecom', this)">E-Commerce</button>
+        <button class="portfolio-filter" data-filter="brand" onclick="filterPortfolio('brand', this)">Branding</button>
+        <button class="portfolio-filter" data-filter="app" onclick="filterPortfolio('app', this)">Apps</button>
+      </div>
+
+      <style>
+        .portfolio-filter {
+          padding: 10px 24px;
+          border-radius: 50px;
+          border: 1px solid var(--border);
+          background: var(--bg-card);
+          color: var(--text-muted);
+          font-family: var(--font-body);
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: var(--transition);
+        }
+        .portfolio-filter:hover, .portfolio-filter.active {
+          border-color: var(--cyan);
+          color: var(--cyan);
+          background: rgba(0,245,255,0.06);
+        }
+        .portfolio-item { transition: opacity 0.3s ease, transform 0.3s ease; }
+        .portfolio-item.hidden { opacity: 0; pointer-events: none; transform: scale(0.95); }
+      </style>
+
+      <h2 class="sr-only" id="portfolio-grid-heading">Project Portfolio</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" id="portfolioGrid">
+
+        <article class="portfolio-card portfolio-item" data-cat="ecom" style="border-radius:var(--radius-md);">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#0D0B1E 0%,#1a0a30 100%);">
+            <div class="portfolio-thumb-inner" style="background:linear-gradient(135deg,#0D0B1E,#1a0a30);flex-direction:column;gap:8px;">
+              <div style="font-size:52px;" aria-hidden="true">🏪</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--cyan);letter-spacing:0.1em;">LIVE PROJECT</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div>
+              <p style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:12px;">340% conversion rate increase post-launch</p>
+              <button class="btn-primary" style="font-size:12px;padding:8px 20px;" onclick="showPage('contact')"><span>Start Similar Project</span></button>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats"><span class="portfolio-cat">E-Commerce</span><span class="portfolio-cat">Next.js</span><span class="portfolio-cat">Shopify</span></div>
+            <h3 class="portfolio-name">Luxe Fashion SA</h3>
+            <p class="portfolio-desc-short">Premium fashion e-commerce platform with custom checkout and loyalty programme</p>
+          </div>
+        </article>
+
+        <article class="portfolio-card portfolio-item" data-cat="web" style="border-radius:var(--radius-md);">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#0a1a2e,#0d0b1e);">
+            <div class="portfolio-thumb-inner" style="background:linear-gradient(135deg,#0a1a2e,#0d0b1e);flex-direction:column;gap:8px;">
+              <div style="font-size:52px;" aria-hidden="true">🏥</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--cyan);letter-spacing:0.1em;">12,000+ MONTHLY USERS</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div>
+              <p style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:12px;">12,000+ monthly active users across Gauteng</p>
+              <button class="btn-primary" style="font-size:12px;padding:8px 20px;" onclick="showPage('contact')"><span>Start Similar Project</span></button>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats"><span class="portfolio-cat">Web App</span><span class="portfolio-cat">Healthcare</span><span class="portfolio-cat">React</span></div>
+            <h3 class="portfolio-name">MediConnect Joburg</h3>
+            <p class="portfolio-desc-short">Patient booking & telemedicine platform for Johannesburg medical network</p>
+          </div>
+        </article>
+
+        <article class="portfolio-card portfolio-item" data-cat="brand" style="border-radius:var(--radius-md);">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#1a0a1e,#0d0b1e);">
+            <div class="portfolio-thumb-inner" style="background:linear-gradient(135deg,#1a0a1e,#0d0b1e);flex-direction:column;gap:8px;">
+              <div style="font-size:52px;" aria-hidden="true">🏗️</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--magenta);letter-spacing:0.1em;">5× MORE ENQUIRIES</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div>
+              <p style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Full rebrand generating 5× more qualified leads</p>
+              <button class="btn-primary" style="font-size:12px;padding:8px 20px;" onclick="showPage('contact')"><span>Start Similar Project</span></button>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats"><span class="portfolio-cat">Branding</span><span class="portfolio-cat">Website</span><span class="portfolio-cat">Strategy</span></div>
+            <h3 class="portfolio-name">Apex Constructions</h3>
+            <p class="portfolio-desc-short">Complete brand transformation and web presence for Pretoria-based construction firm</p>
+          </div>
+        </article>
+
+        <article class="portfolio-card portfolio-item" data-cat="app" style="border-radius:var(--radius-md);">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#0a2e1a,#0d0b1e);">
+            <div class="portfolio-thumb-inner" style="background:linear-gradient(135deg,#0a2e1a,#0d0b1e);flex-direction:column;gap:8px;">
+              <div style="font-size:52px;" aria-hidden="true">🌿</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:#22D3EE;letter-spacing:0.1em;">REACT NATIVE APP</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div>
+              <p style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Farm-to-table app connecting 200+ local producers</p>
+              <button class="btn-primary" style="font-size:12px;padding:8px 20px;" onclick="showPage('contact')"><span>Start Similar Project</span></button>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats"><span class="portfolio-cat">Mobile App</span><span class="portfolio-cat">AgriTech</span><span class="portfolio-cat">React Native</span></div>
+            <h3 class="portfolio-name">FreshRoute SA</h3>
+            <p class="portfolio-desc-short">Farm-to-table marketplace connecting Gauteng consumers with local farmers</p>
+          </div>
+        </article>
+
+        <article class="portfolio-card portfolio-item" data-cat="web" style="border-radius:var(--radius-md);">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#1e1a0a,#0d0b1e);">
+            <div class="portfolio-thumb-inner" style="background:linear-gradient(135deg,#1e1a0a,#0d0b1e);flex-direction:column;gap:8px;">
+              <div style="font-size:52px;" aria-hidden="true">⚖️</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--gold);letter-spacing:0.1em;">LAW TECH</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div>
+              <p style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Client intake increased 280% through digital transformation</p>
+              <button class="btn-primary" style="font-size:12px;padding:8px 20px;" onclick="showPage('contact')"><span>Start Similar Project</span></button>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats"><span class="portfolio-cat">Web Platform</span><span class="portfolio-cat">LegalTech</span><span class="portfolio-cat">TypeScript</span></div>
+            <h3 class="portfolio-name">Legalise.co.za</h3>
+            <p class="portfolio-desc-short">Online legal consultation platform for South African SMEs and entrepreneurs</p>
+          </div>
+        </article>
+
+        <article class="portfolio-card portfolio-item" data-cat="ecom brand" style="border-radius:var(--radius-md);">
+          <div class="portfolio-thumb" style="background:linear-gradient(135deg,#2e0a1a,#0d0b1e);">
+            <div class="portfolio-thumb-inner" style="background:linear-gradient(135deg,#2e0a1a,#0d0b1e);flex-direction:column;gap:8px;">
+              <div style="font-size:52px;" aria-hidden="true">☕</div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--magenta);letter-spacing:0.1em;">JHB BRAND</div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div>
+              <p style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:12px;">Artisan coffee brand launched to nationwide acclaim</p>
+              <button class="btn-primary" style="font-size:12px;padding:8px 20px;" onclick="showPage('contact')"><span>Start Similar Project</span></button>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-cats"><span class="portfolio-cat">Branding</span><span class="portfolio-cat">E-Commerce</span><span class="portfolio-cat">FMCG</span></div>
+            <h3 class="portfolio-name">Mzansi Brew Co.</h3>
+            <p class="portfolio-desc-short">Full brand identity and e-commerce for Joburg artisan coffee roastery</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Portfolio CTA -->
+      <div style="text-align:center;margin-top:64px;" class="reveal">
+        <p style="font-size:16px;color:var(--text-muted);margin-bottom:24px;">Every project on this page started with a conversation. Let's start yours.</p>
+        <button class="btn-primary" onclick="showPage('contact')">
+          <span>Start Your Project</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</div><!-- end #page-portfolio -->
+
+<!-- ============================================
+     CONTACT / QUOTE PAGE
+============================================ -->
+<div id="page-contact" class="page">
+  <section class="page-hero" aria-labelledby="contact-heading">
+    <div class="orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(0,245,255,0.12),transparent 70%);top:-200px;right:-100px;" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <p class="section-label" style="justify-content:center;">Let's Connect</p>
+      <h1 class="section-title" id="contact-heading">
+        Begin Your<br>
+        <span class="gradient-text">Transformation</span>
+      </h1>
+      <p class="text-muted" style="margin-top:20px;font-size:18px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8;">
+        Tell us about your project. We'll respond within 24 hours with a customised strategy — no fluff, no generic proposals.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="contact-wrapper">
+        <!-- Contact Info -->
+        <div>
+          <h2 style="font-family:var(--font-display);font-size:28px;font-weight:700;margin-bottom:32px;" id="contact-info-heading">Get In Touch</h2>
+          <div class="contact-info-item reveal" role="article" aria-label="Email contact">
+            <div class="contact-info-icon" aria-hidden="true">📧</div>
+            <div>
+              <div class="contact-info-label">EMAIL</div>
+              <div class="contact-info-value">keketso@techalchemylab.co.za</div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal" role="article" aria-label="WhatsApp contact">
+            <div class="contact-info-icon" aria-hidden="true">💬</div>
+            <div>
+              <div class="contact-info-label">WHATSAPP</div>
+              <div class="contact-info-value">+27 (0) 78 000 0000</div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal" role="article" aria-label="Location">
+            <div class="contact-info-icon" aria-hidden="true">📍</div>
+            <div>
+              <div class="contact-info-label">BASED IN</div>
+              <div class="contact-info-value">Johannesburg, Gauteng 🇿🇦</div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal" role="article" aria-label="Working hours">
+            <div class="contact-info-icon" aria-hidden="true">🕐</div>
+            <div>
+              <div class="contact-info-label">WORKING HOURS</div>
+              <div class="contact-info-value">Mon–Fri, 8:00 – 18:00 SAST</div>
+            </div>
+          </div>
+
+          <div style="margin-top:40px;padding:28px;border-radius:var(--radius-md);background:rgba(0,245,255,0.04);border:1px solid rgba(0,245,255,0.12);" class="reveal">
+            <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;margin-bottom:16px;">✦ Free Strategy Call</h3>
+            <p style="font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">All new enquiries include a complimentary 30-minute strategy session — a real conversation about your business, your goals, and the best path forward.</p>
+            <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-muted);">
+              <span style="color:var(--cyan);">✓</span> No sales pressure
+              <span style="color:var(--cyan);">✓</span> Honest advice
+              <span style="color:var(--cyan);">✓</span> Clear next steps
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form reveal" role="form" aria-labelledby="form-title">
+          <h3 class="form-title" id="form-title">Request a Quote</h3>
+          <div id="formContent">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="firstName">First Name</label>
+                <input class="form-input" type="text" id="firstName" name="firstName" placeholder="Thabo" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Nkosi" required autocomplete="family-name" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="email">Email Address</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="thabo@business.co.za" required autocomplete="email" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="phone">Phone / WhatsApp</label>
+                <input class="form-input" type="tel" id="phone" name="phone" placeholder="+27 78 000 0000" autocomplete="tel" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="service">Service Needed</label>
+                <select class="form-select" id="service" name="service" aria-label="Select service needed">
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="website">Website / Web App Development</option>
+                  <option value="ecommerce">E-Commerce Store</option>
+                  <option value="branding">Brand Identity & Design</option>
+                  <option value="mobile">Mobile App Development</option>
+                  <option value="strategy">Digital Strategy & SEO</option>
+                  <option value="retainer">Monthly Retainer</option>
+                  <option value="other">Other / Not Sure Yet</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="budget">Budget Range (ZAR)</label>
+                <select class="form-select" id="budget" name="budget" aria-label="Select your budget range">
+                  <option value="" disabled selected>Select budget range...</option>
+                  <option value="under-5k">Under R5,000</option>
+                  <option value="5k-15k">R5,000 – R15,000</option>
+                  <option value="15k-30k">R15,000 – R30,000</option>
+                  <option value="30k-60k">R30,000 – R60,000</option>
+                  <option value="60k-plus">R60,000+</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="message">Tell Us About Your Project</label>
+                <textarea class="form-textarea" id="message" name="message" placeholder="Describe your business, what you need, and what success looks like for you..." required></textarea>
+              </div>
+            </div>
+            <div class="form-submit">
+              <button class="btn-primary" onclick="submitForm(event)" type="button" aria-label="Submit quote request">
+                <span>Send My Enquiry</span>
+                <span aria-hidden="true">✦</span>
+              </button>
+            </div>
+            <p style="margin-top:16px;font-size:13px;color:var(--text-muted);text-align:center;">We respond within 24 hours · Your information is always private</p>
+          </div>
+          <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+            <div class="form-success-icon" aria-hidden="true">✦</div>
+            <h4 class="form-success-title">Alchemy Initiated!</h4>
+            <p class="form-success-desc">Thank you for reaching out. The Alchemist will review your project and get back to you within 24 hours with a personalised response.<br><br>In the meantime, why not explore our portfolio?</p>
+            <button class="btn-outline" style="margin-top:24px;" onclick="showPage('portfolio')">Explore Portfolio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- end #page-contact -->
+
+<!-- ============================================
+     FOOTER (Appears on all pages)
+============================================ -->
+<footer role="contentinfo" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32" aria-hidden="true">
+            <path d="M19 3 C19 3, 32 16, 32 24 C32 31.18 26.18 36 19 36 C11.82 36 6 31.18 6 24 C6 16, 19 3, 19 3Z" stroke="url(#logoGrad2)" stroke-width="1.5" fill="rgba(0,245,255,0.06)"/>
+            <defs><linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00F5FF"/><stop offset="100%" stop-color="#C026D3"/></linearGradient></defs>
+            <line x1="19" y1="14" x2="19" y2="28" stroke="url(#logoGrad2)" stroke-width="0.8" opacity="0.6"/>
+            <line x1="13" y1="22" x2="25" y2="22" stroke="url(#logoGrad2)" stroke-width="0.8" opacity="0.6"/>
+            <circle cx="19" cy="22" r="2" fill="#00F5FF" opacity="0.9"/>
+          </svg>
+          <span>Tech Alchemy Lab</span>
+        </div>
+        <p class="footer-tagline">Turning Code into Digital Gold. Johannesburg's premium web development & digital transformation agency — built for African businesses with global ambitions.</p>
+        <div class="footer-socials" aria-label="Social media links">
+          <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+          <a href="#" class="footer-social" aria-label="Twitter / X">𝕏</a>
+          <a href="#" class="footer-social" aria-label="Instagram">ig</a>
+          <a href="#" class="footer-social" aria-label="GitHub">gh</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Services</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#" onclick="showPage('services');return false;">Web Development</a></li>
+          <li><a href="#" onclick="showPage('services');return false;">Brand & UI/UX Design</a></li>
+          <li><a href="#" onclick="showPage('services');return false;">Mobile Apps</a></li>
+          <li><a href="#" onclick="showPage('services');return false;">E-Commerce</a></li>
+          <li><a href="#" onclick="showPage('services');return false;">Digital Strategy</a></li>
+          <li><a href="#" onclick="showPage('services');return false;">Retainer Packages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Company</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#" onclick="showPage('about');return false;">About The Alchemist</a></li>
+          <li><a href="#" onclick="showPage('portfolio');return false;">Portfolio</a></li>
+          <li><a href="#" onclick="showPage('services');return false;">Pricing</a></li>
+          <li><a href="#" onclick="showPage('contact');return false;">Contact Us</a></li>
+          <li><a href="#" onclick="showPage('contact');return false;">Book Strategy Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Based In</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#" aria-label="Location: Johannesburg">📍 Johannesburg, Gauteng</a></li>
+          <li><a href="#" aria-label="Country: South Africa">🇿🇦 South Africa</a></li>
+          <li><a href="mailto:keketso@techalchemylab.co.za">keketso@techalchemylab.co.za</a></li>
+          <li><a href="tel:+27780000000">+27 (0) 78 000 0000</a></li>
+          <li><a href="#" onclick="showPage('contact');return false;" style="color:var(--cyan);">WhatsApp Us →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 The Tech Alchemy Lab. All rights reserved. Crafted with ✦ in Johannesburg.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/script.js" defer></script>
+</body>
+</html>
