@@ -163,7 +163,11 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
 function submitForm(e) {
 e.preventDefault();
 const firstName = document.getElementById('firstName').value.trim();
+const lastName = document.getElementById('lastName').value.trim();
 const email = document.getElementById('email').value.trim();
+const phone = document.getElementById('phone').value.trim();
+const service = document.getElementById('service').value.trim();
+const budget = document.getElementById('budget').value.trim();
 const message = document.getElementById('message').value.trim();
 
 if (!firstName || !email || !message) {
@@ -178,8 +182,45 @@ if (!firstName || !email || !message) {
     return;
 }
 
-document.getElementById('formContent').style.display = 'none';
-document.getElementById('formSuccess').classList.add('show');
+// Disable submit button to prevent double submissions
+const submitBtn = event.target;
+submitBtn.disabled = true;
+submitBtn.style.opacity = '0.6';
+
+// Create FormData object for Formspree
+const formData = new FormData();
+formData.append('firstName', firstName);
+formData.append('lastName', lastName);
+formData.append('email', email);
+formData.append('phone', phone);
+formData.append('service', service);
+formData.append('budget', budget);
+formData.append('message', message);
+
+// Submit to Formspree
+fetch('https://formspree.io/f/xwvjpldg', {
+    method: 'POST',
+    body: formData,
+    headers: {
+        'Accept': 'application/json'
+    }
+})
+.then(response => {
+    if (response.ok) {
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+    } else {
+        alert('There was an error sending your message. Please try again.');
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+    alert('There was an error sending your message. Please try again.');
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = '1';
+});
 }
 
 // ============================================
