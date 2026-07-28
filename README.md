@@ -162,6 +162,15 @@ Graduate Software Engineer | Full-Stack Developer
 ---
 <img width="1280" height="1024" alt="image" src="https://github.com/user-attachments/assets/1f66135c-08bf-4738-af9b-10d0c28c19c5" />
 
+
+## 🧠 Challenges & Lessons Learned
+
+While building this project, I focused on:
+
+- Improving responsive layouts across devices
+- Organizing a scalable project structure
+- Deploying and maintaining applications on Vercel
+
 ## 📄 License
 
 This project is licensed under the MIT License.
