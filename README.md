@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 9 establishes the production SEO layer: canonical metadata, Open Graph and X cards, structured business data, Google verification, sitemap, robots rules, a web manifest and a custom neon alchemy favicon matching the site brand.
+The pre-deployment responsive quality pass prioritises 320–640px screens: long display headings now wrap inside the viewport, the timeline moves closer on desktop and stacks beneath its heading on mobile, pricing cards use a single readable column, and the contact story and form flow vertically with touch-friendly 16px inputs.
 
 ## Stack
 

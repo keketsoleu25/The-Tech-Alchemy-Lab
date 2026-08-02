@@ -22,11 +22,15 @@
 }
 
 html {
+  max-width: 100%;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
+  max-width: 100%;
   margin: 0;
+  overflow-x: clip;
   background: radial-gradient(circle at 8% 18%, rgba(0, 245, 255, 0.045), transparent 26%),
     radial-gradient(circle at 92% 12%, rgba(181, 72, 255, 0.045), transparent 24%),
     var(--ink);
@@ -2467,9 +2471,9 @@ button:focus-visible {
 
 .journey-grid {
   display: grid;
-  grid-template-columns: minmax(330px, 0.72fr) minmax(0, 1.28fr);
+  grid-template-columns: minmax(300px, 0.68fr) minmax(0, 1.32fr);
   align-items: start;
-  gap: clamp(70px, 10vw, 150px);
+  gap: clamp(44px, 6vw, 88px);
   padding-block: 140px;
 }
 
@@ -2587,9 +2591,9 @@ button:focus-visible {
 .contact-grid {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(320px, 0.72fr) minmax(520px, 1.28fr);
+  grid-template-columns: minmax(390px, 0.88fr) minmax(480px, 1.12fr);
   align-items: start;
-  gap: clamp(60px, 9vw, 130px);
+  gap: clamp(44px, 6vw, 88px);
 }
 
 .contact-copy {
@@ -2600,7 +2604,7 @@ button:focus-visible {
 .contact-copy h2 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(3.2rem, 5.7vw, 5.6rem);
+  font-size: clamp(3.2rem, 4.8vw, 5rem);
   letter-spacing: -0.065em;
   line-height: 0.9;
   text-transform: uppercase;
@@ -3345,6 +3349,7 @@ button:focus-visible {
 
   .journey-grid {
     grid-template-columns: 1fr;
+    gap: 56px;
   }
 
   .journey-heading {
@@ -3353,6 +3358,7 @@ button:focus-visible {
 
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 56px;
   }
 
   .contact-copy {
@@ -3385,11 +3391,36 @@ button:focus-visible {
 
 @media (max-width: 640px) {
   .shell {
-    width: min(100% - 32px, 1180px);
+    width: calc(100% - 32px);
+    max-width: 1180px;
+  }
+
+  main,
+  section,
+  .shell,
+  .section-heading,
+  .pricing-heading,
+  .journey-grid,
+  .contact-grid,
+  .contact-copy,
+  .contact-form {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .header-inner {
+    gap: 12px;
     min-height: 70px;
+  }
+
+  .brand {
+    gap: 9px;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .brand > span:last-child {
+    white-space: nowrap;
   }
 
   .brand-mark {
@@ -3399,6 +3430,18 @@ button:focus-visible {
 
   .mobile-nav {
     inset-block-start: 70px;
+  }
+
+  .eyebrow {
+    gap: 10px;
+    margin-bottom: 24px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .eyebrow span {
+    width: 24px;
+    flex: 0 0 auto;
   }
 
   .hero {
@@ -3558,8 +3601,17 @@ button:focus-visible {
     margin-bottom: 44px;
   }
 
-  .section-heading h2 {
-    font-size: clamp(2.7rem, 14vw, 4rem);
+  .section-heading h2,
+  .pricing-heading h2,
+  .about-copy h2,
+  .values .section-heading h2,
+  .journey-heading h2,
+  .philosophy-inner h2,
+  .contact-copy h2 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    letter-spacing: -0.05em;
+    line-height: 0.96;
   }
 
   .services-grid {
@@ -3575,7 +3627,43 @@ button:focus-visible {
   }
 
   .portfolio {
-    padding-block: 100px;
+    padding-block: 84px;
+  }
+
+  .portfolio-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-filters button {
+    min-height: 44px;
+    padding-inline: 8px;
+  }
+
+  .project-browser-bar i {
+    max-width: 68%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .is-compact .project-visual-body {
+    min-height: 230px;
+    padding: 22px;
+  }
+
+  .is-compact .project-visual-body strong {
+    max-width: 85%;
+    font-size: clamp(1.8rem, 10vw, 2.4rem);
+  }
+
+  .project-card-info {
+    padding: 22px 18px;
+  }
+
+  .project-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .portfolio-grid {
@@ -3650,19 +3738,23 @@ button:focus-visible {
   }
 
   .pricing {
-    padding-block: 100px;
+    padding-block: 84px;
   }
 
   .pricing-heading {
     margin-bottom: 48px;
   }
 
-  .pricing-heading h2 {
-    font-size: clamp(3rem, 14vw, 4.7rem);
-  }
-
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-card {
+    padding: 28px 20px 22px;
+  }
+
+  .pricing-price strong {
+    font-size: clamp(2.35rem, 13vw, 3rem);
   }
 
   .pricing-card h3,
@@ -3676,6 +3768,7 @@ button:focus-visible {
 
   .pricing-note {
     align-items: stretch;
+    padding: 22px 18px;
     flex-direction: column;
   }
 
@@ -3686,13 +3779,7 @@ button:focus-visible {
 
   .about-story {
     gap: 64px;
-    padding-block: 100px;
-  }
-
-  .about-copy h2,
-  .values .section-heading h2,
-  .journey-heading h2 {
-    font-size: clamp(3rem, 14vw, 4.6rem);
+    padding-block: 84px;
   }
 
   .portrait-frame {
@@ -3706,11 +3793,16 @@ button:focus-visible {
   .philosophy-inner,
   .values,
   .journey-grid {
-    padding-block: 100px;
+    padding-block: 84px;
   }
 
-  .philosophy-inner h2 {
-    font-size: clamp(2.8rem, 13vw, 4.2rem);
+  .philosophy-inner > p:last-child,
+  .about-text p,
+  .journey-heading > p:last-child,
+  .contact-copy > p:not(.eyebrow) {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
   .values-grid {
@@ -3726,36 +3818,86 @@ button:focus-visible {
   }
 
   .journey-grid {
-    gap: 70px;
+    gap: 46px;
   }
 
   .timeline li {
-    grid-template-columns: 42px 1fr;
-    gap: 18px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .timeline-marker span {
+    width: 30px;
+    height: 30px;
+  }
+
+  .timeline-marker::after {
+    top: 25px;
+  }
+
+  .timeline li > div:last-child {
+    padding-bottom: 42px;
+  }
+
+  .timeline h3 {
+    font-size: 1.25rem;
+  }
+
+  .timeline p {
+    max-width: 100%;
+    font-size: 13px;
   }
 
   .contact {
-    padding-block: 100px;
+    padding-block: 84px;
   }
 
   .contact-grid {
-    gap: 64px;
+    gap: 48px;
   }
 
-  .contact-copy h2 {
-    font-size: clamp(3rem, 14vw, 4.7rem);
+  .contact-details {
+    margin-top: 36px;
   }
 
   .contact-form {
-    padding: 24px 18px;
+    width: 100%;
+    padding: 22px 16px;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .form-wide {
     grid-column: auto;
+  }
+
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea {
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .form-grid input,
+  .form-grid select {
+    height: 52px;
+  }
+
+  .form-grid textarea {
+    min-height: 130px;
+  }
+
+  .form-heading {
+    margin-bottom: 26px;
+  }
+
+  .form-privacy {
+    font-size: 8px;
+    line-height: 1.6;
   }
 
   .footer-lead {
@@ -3775,6 +3917,30 @@ button:focus-visible {
 
   .footer-bottom {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 380px) {
+  .shell {
+    width: calc(100% - 28px);
+  }
+
+  .section-heading h2,
+  .pricing-heading h2,
+  .about-copy h2,
+  .values .section-heading h2,
+  .journey-heading h2,
+  .philosophy-inner h2,
+  .contact-copy h2 {
+    font-size: clamp(2.05rem, 9.5vw, 2.3rem);
+  }
+
+  .portfolio-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding-inline: 14px;
   }
 }
 
