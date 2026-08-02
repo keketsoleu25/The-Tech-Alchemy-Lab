@@ -2,85 +2,108 @@ const packages = [
   {
     tier: "Launch",
     name: "Launchpad",
-    tagline: "For startups and side hustles ready to establish a credible digital presence.",
-    price: "7,500",
-    cadence: "Once-off project",
-    cta: "Get started",
+    tagline: "For startups establishing a credible first presence.",
+    price: "12,500",
+    priceUsd: "approx. $680",
+    cadence: "Once-off project · 2-week delivery",
+    cta: "Start with Launchpad",
     featured: false,
+    accent: "cyan",
     included: [
-      "5-page responsive website",
-      "Mobile-first design",
-      "Contact form setup",
-      "Basic SEO setup",
-      "Google Analytics integration",
+      "Up to 5 responsive pages",
+      "Mobile-first implementation",
+      "Contact / enquiry form",
+      "Foundational on-page SEO",
+      "Analytics integration",
       "2 revision rounds",
-      "30-day post-launch support",
+      "30 days of post-launch defect support",
     ],
-    excluded: ["E-commerce functionality", "Custom animations", "Brand identity design"],
+    excluded: [
+      "E-commerce",
+      "CMS integration",
+      "Custom web applications",
+      "Complex third-party integrations",
+      "Advanced custom animation",
+    ],
   },
   {
     tier: "Growth",
     name: "Accelerator",
-    tagline: "For established businesses ready to strengthen and expand their digital reach.",
-    price: "15,000",
-    cadence: "Once-off project",
-    cta: "Start accelerating",
+    tagline: "For established businesses ready to scale their digital reach.",
+    price: "24,000",
+    priceUsd: "approx. $1,300",
+    cadence: "Once-off project · 4-week delivery",
+    cta: "Build with Accelerator",
     featured: true,
+    accent: "cyan",
     included: [
-      "Up to 12-page website",
+      "Up to 8 pages",
       "Custom UI/UX design",
-      "Advanced animations",
-      "E-commerce for up to 50 products",
-      "Full SEO implementation",
       "CMS integration",
-      "4 revision rounds",
-      "60-day post-launch support",
-      "Performance monitoring setup",
+      "Full on-page SEO implementation",
+      "E-commerce catalogue, up to 20 products",
+      "Analytics integration",
+      "3 revision rounds",
+      "30 days of post-launch defect support",
     ],
-    excluded: ["Custom third-party integrations"],
+    excluded: ["Custom third-party integrations", "50+ product catalogues", "Unlimited animation"],
   },
   {
     tier: "Enterprise",
     name: "Transmutation",
-    tagline: "A scoped digital transformation for organisations with complex requirements.",
-    price: "25,000",
-    cadence: "Starting investment",
-    cta: "Request proposal",
+    tagline: "For organisations requiring custom systems, integrations or complex digital architecture.",
+    price: "45,000",
+    priceUsd: null,
+    cadence: "Projects start at this investment · scope confirmed after discovery",
+    discoverySprint: "Paid discovery sprint: R3,500 — credited toward the final invoice if approved within 30 days.",
+    cta: "Book a discovery sprint",
     featured: false,
+    accent: "gold",
     included: [
-      "Scope-defined page architecture",
-      "Full brand identity design",
-      "Custom web application",
-      "Advanced e-commerce",
-      "Custom API integrations",
-      "Mobile product planning",
-      "Dedicated project ownership",
-      "90-day post-launch support",
-      "Monthly strategy sessions",
-      "Priority scheduling",
+      "Custom web applications",
+      "Customer or staff portals",
+      "API integrations",
+      "Workflow automation",
+      "Advanced database functionality",
+      "E-commerce catalogues exceeding 20 products",
+      "Complex role-based systems",
+      "Weekly project check-ins",
+      "Dedicated ownership",
+      "Estimated 6–10 week delivery",
+      "90 days of post-launch defect support",
     ],
     excluded: [],
   },
   {
     tier: "Retainer",
     name: "The Philosopher’s Stone",
-    tagline: "A dedicated digital partnership for continuous improvement after launch.",
-    price: "8,500",
+    tagline: "An ongoing technical partnership for businesses that need continuity, maintenance and regular improvements.",
+    price: "14,500",
+    priceUsd: "approx. $800/month",
     period: "/month",
-    cadence: "Minimum 3-month commitment",
-    cta: "Enquire now",
+    cadence: "3-month minimum commitment",
+    cta: "Discuss an ongoing partnership",
     featured: false,
+    accent: "premium",
+    valueStatement:
+      "Keep the developer who built and understands your system available, so the product doesn’t become outdated, unstable or disconnected from the business.",
     included: [
-      "40 hours/month development and design",
-      "Priority support with 24-hour response",
+      "Up to 25 hours per month",
+      "Priority support, response within 1 business day",
       "Monthly strategy session",
-      "Ongoing SEO and content support",
-      "Performance reporting",
+      "Monthly performance summary",
+      "Continuous improvements",
+      "Security and dependency maintenance",
+      "SEO maintenance",
       "Hosting management",
-      "Security and updates",
-      "A/B testing and optimisation",
+      "Direct access to the developer who understands the system",
     ],
-    excluded: ["New project builds", "Social media management"],
+    excluded: [
+      "Guaranteed resolution time (response window only)",
+      "Unused hours carried over (they expire monthly)",
+      "Hours beyond 25/month (billed at R750/hr or quoted separately)",
+      "Third-party hosting, domain and subscription costs",
+    ],
   },
 ];
 
@@ -106,7 +129,10 @@ export function PricingSection() {
 
         <div className="pricing-grid">
           {packages.map((item) => (
-            <article className={`pricing-card ${item.featured ? "is-featured" : ""}`} key={item.name}>
+            <article
+              className={`pricing-card accent-${item.accent} ${item.featured ? "is-featured" : ""}`}
+              key={item.name}
+            >
               {item.featured && <div className="pricing-popular">✦ Most popular</div>}
               <header>
                 <span className="pricing-tier">{item.tier}</span>
@@ -117,8 +143,17 @@ export function PricingSection() {
                   <strong>{item.price}</strong>
                   {item.period && <small>{item.period}</small>}
                 </div>
+                {item.priceUsd && <p className="pricing-price-usd">{item.priceUsd}</p>}
                 <p className="pricing-cadence">{item.cadence}</p>
               </header>
+
+              {item.discoverySprint && (
+                <p className="pricing-discovery">{item.discoverySprint}</p>
+              )}
+
+              {item.valueStatement && (
+                <p className="pricing-value-statement">{item.valueStatement}</p>
+              )}
 
               <div className="pricing-features">
                 <p>What’s included</p>
@@ -150,9 +185,59 @@ export function PricingSection() {
           <a href="#contact">Book your free strategy call <span aria-hidden="true">↗</span></a>
         </div>
 
+        <div className="pricing-scope-policy">
+          <h3>Clear scope. No surprise invoices.</h3>
+          <dl>
+            <div>
+              <dt>Revision rounds</dt>
+              <dd>
+                One revision round means one consolidated collection of feedback submitted at
+                the same time — not unlimited individual changes sent across multiple days.
+              </dd>
+            </div>
+            <div>
+              <dt>Support period</dt>
+              <dd>
+                Post-launch support covers defects where delivered work doesn’t behave
+                according to the approved scope. It doesn’t include new pages, new features,
+                redesigns, new integrations, content creation, or requirements introduced
+                after approval.
+              </dd>
+            </div>
+            <div>
+              <dt>Timelines</dt>
+              <dd>
+                Delivery timelines begin only once the required deposit has cleared, content
+                has been supplied, required accounts and access have been provided, and scope
+                has been approved.
+              </dd>
+            </div>
+            <div>
+              <dt>Additional scope</dt>
+              <dd>
+                Requests outside the approved package or proposal are estimated and approved
+                separately before work begins.
+              </dd>
+            </div>
+            <div>
+              <dt>Third-party costs</dt>
+              <dd>
+                Domains, hosting, paid plugins, external APIs and subscription services are
+                billed separately unless the proposal explicitly states otherwise.
+              </dd>
+            </div>
+            <div>
+              <dt>Client delays</dt>
+              <dd>Delays in content, feedback, approvals or access may move the delivery date.</dd>
+            </div>
+          </dl>
+        </div>
+
         <p className="pricing-terms">
-          Starting prices exclude third-party subscriptions, paid licences, hosting and content
-          production unless they are included in the written proposal.
+          Prices are shown in South African Rand. USD figures are approximate estimates only —
+          final invoices are issued in ZAR unless otherwise agreed. Starting prices exclude
+          third-party subscriptions, paid licences, hosting and content production unless
+          included in the written proposal.
         </p>
       </div>
     </section>
