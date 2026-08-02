@@ -3,10 +3,10 @@ import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
 
 const footerNavigation = [
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "About", href: "/#about" },
 ];
 
 export function SiteFooter() {
@@ -29,7 +29,7 @@ export function SiteFooter() {
 
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link className="brand" href="#home" aria-label="The Tech Alchemy Lab home">
+            <Link className="brand" href="/#home" aria-label="The Tech Alchemy Lab home">
               <BrandMark />
               <span>
                 Tech Alchemy

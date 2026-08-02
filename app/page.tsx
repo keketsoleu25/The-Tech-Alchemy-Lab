@@ -1,3 +1,5 @@
+import { PortfolioSection } from "@/components/portfolio-section";
+
 const technologies = [
   "Next.js",
   "React",
@@ -206,6 +208,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <PortfolioSection />
     </>
   );
 }
