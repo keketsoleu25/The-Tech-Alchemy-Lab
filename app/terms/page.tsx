@@ -5,6 +5,7 @@ import { LegalDocument } from "@/components/legal-document";
 export const metadata: Metadata = {
   title: "Website Terms",
   description: "Terms governing use of The Tech Alchemy Lab marketing website.",
+  alternates: { canonical: "/terms" },
 };
 
 const sections = [

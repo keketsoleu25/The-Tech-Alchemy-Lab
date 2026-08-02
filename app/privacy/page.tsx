@@ -5,6 +5,7 @@ import { LegalDocument } from "@/components/legal-document";
 export const metadata: Metadata = {
   title: "Privacy Notice",
   description: "How The Tech Alchemy Lab collects, uses and protects website enquiry information.",
+  alternates: { canonical: "/privacy" },
 };
 
 const sections = [

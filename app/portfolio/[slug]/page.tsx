@@ -24,6 +24,18 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   return {
     title: `${project.name} Case Study`,
     description: project.introduction,
+    alternates: { canonical: `/portfolio/${project.slug}` },
+    openGraph: {
+      type: "article",
+      url: `/portfolio/${project.slug}`,
+      title: `${project.name} Case Study | The Tech Alchemy Lab`,
+      description: project.introduction,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} Case Study | The Tech Alchemy Lab`,
+      description: project.introduction,
+    },
   };
 }
 

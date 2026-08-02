@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 8 replaces dead destinations with verified navigation and contact links, adds real Privacy and Website Terms routes, and connects the new featured-systems anchor across desktop, mobile and footer navigation. Unknown social profiles remain removed rather than being represented by placeholders.
+Phase 9 establishes the production SEO layer: canonical metadata, Open Graph and X cards, structured business data, Google verification, sitemap, robots rules, a web manifest and a custom neon alchemy favicon matching the site brand.
 
 ## Stack
 
