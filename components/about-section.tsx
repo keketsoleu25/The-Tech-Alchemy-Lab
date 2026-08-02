@@ -49,13 +49,14 @@ const journey = [
   {
     year: "2019",
     title: "The spark",
-    description: "Started studying BSc Computer Science and Statistics at North-West University’s Vaal campus.",
+    description:
+      "Enrolled for a BSc in Computer Science and Statistics at North-West University’s Vaal campus. I studied there from 2019 to 2022 but did not complete the degree.",
   },
   {
     year: "2020–2022",
     title: "The foundation",
     description:
-      "Built a base in problem-solving, mathematics, economics and statistics before choosing a practical, project-led route.",
+      "Built a base in problem-solving, mathematics, economics and statistics, then left the degree programme before graduating to pursue a practical, project-led route.",
   },
   {
     year: "2022–2023",
