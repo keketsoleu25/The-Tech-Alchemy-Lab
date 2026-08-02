@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 1 establishes the Next.js application foundation, global visual system, responsive navigation, and footer. The original static implementation remains in `legacy/` as a content reference while each section is migrated and verified.
+Phase 2 adds the production hero, technology positioning, studio metrics and six-service grid on top of the verified Next.js foundation. The original static implementation remains in `legacy/` as a content reference while each remaining section is migrated and verified.
 
 ## Stack
 
