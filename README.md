@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 6 is complete. The validated enquiry form persists submissions to PostgreSQL before sending a Resend notification, and the full flow has been verified with a real database record and delivered email.
+Phase 7 adds one consolidated featured-systems showcase: Tech Alchemy CRM is presented as the flagship full-stack product, with the Tech Alchemy Auth System retained as focused proof of authentication and authorization engineering. Phase 6 remains verified end to end with a real PostgreSQL record and delivered Resend email.
 
 ## Stack
 

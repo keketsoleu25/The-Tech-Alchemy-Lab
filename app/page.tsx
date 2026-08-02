@@ -1,5 +1,6 @@
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
+import { FeaturedBuildsSection } from "@/components/featured-builds-section";
 import { PortfolioSection } from "@/components/portfolio-section";
 import { PricingSection } from "@/components/pricing-section";
 
@@ -166,6 +167,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <FeaturedBuildsSection />
 
       <section className="services" id="services" aria-labelledby="services-title">
         <div className="shell">
