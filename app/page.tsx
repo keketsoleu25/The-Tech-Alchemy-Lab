@@ -1,7 +1,9 @@
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
+import { FeaturedBuildsSection } from "@/components/featured-builds-section";
 import { PortfolioSection } from "@/components/portfolio-section";
 import { PricingSection } from "@/components/pricing-section";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const technologies = [
   "Next.js",
@@ -63,9 +65,62 @@ const services = [
   },
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      inLanguage: "en-ZA",
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#business`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon.svg`,
+      image: `${SITE_URL}/opengraph-image`,
+      email: "techalchemist407@gmail.com",
+      telephone: "+27 69 260 2709",
+      description: SITE_DESCRIPTION,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Johannesburg",
+        addressRegion: "Gauteng",
+        addressCountry: "ZA",
+      },
+      areaServed: { "@type": "Country", name: "South Africa" },
+      founder: { "@id": `${SITE_URL}/#founder` },
+      sameAs: ["https://github.com/keketsoleu25"],
+      serviceType: [
+        "Web development",
+        "Full-stack application development",
+        "UI and UX design",
+        "E-commerce development",
+        "Digital strategy",
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#founder`,
+      name: "Keketso Leu",
+      jobTitle: "Full-Stack Developer",
+      url: `${SITE_URL}/#about`,
+      sameAs: ["https://github.com/keketsoleu25"],
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <section className="hero" id="home" aria-labelledby="hero-title">
         <div className="hero-aura hero-aura-cyan" aria-hidden="true" />
         <div className="hero-aura hero-aura-violet" aria-hidden="true" />
@@ -166,6 +221,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <FeaturedBuildsSection />
 
       <section className="services" id="services" aria-labelledby="services-title">
         <div className="shell">

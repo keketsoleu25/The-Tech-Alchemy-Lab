@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
 
 const footerNavigation = [
+  { label: "Featured systems", href: "/#featured-builds" },
   { label: "Services", href: "/#services" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Pricing", href: "/#pricing" },
@@ -76,7 +77,10 @@ export function SiteFooter() {
 
         <div className="footer-bottom">
           <p>© 2026 The Tech Alchemy Lab. All rights reserved.</p>
-          <p>Turning code into digital gold.</p>
+          <div className="footer-legal">
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Website terms</Link>
+          </div>
         </div>
       </div>
     </footer>

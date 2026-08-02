@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 6 adds a validated enquiry form, PostgreSQL persistence and Resend notification delivery. The form code is complete, but the phase remains unverified until the database migration is applied and a real email is delivered end to end.
+The pre-deployment responsive quality pass prioritises 320–640px screens: long display headings now wrap inside the viewport, the timeline moves closer on desktop and stacks beneath its heading on mobile, pricing cards use a single readable column, and the contact story and form flow vertically with touch-friendly 16px inputs.
 
 ## Stack
 
@@ -12,18 +12,22 @@ Phase 6 adds a validated enquiry form, PostgreSQL persistence and Resend notific
 - React 19
 - TypeScript
 - Tailwind CSS 4
+- Prisma 7 with Neon PostgreSQL
+- Zod
+- Resend
 - Vercel
-
-Resend and persistent enquiry storage will be added during the dedicated contact-form phase.
 
 ## Local development
 
 ```powershell
 npm install
+npm run db:migrate
 npm run dev
 ```
 
 Open `http://localhost:3000`.
+
+Copy `.env.example` to `.env` and configure the required values before running the migration. Never commit `.env`.
 
 ## License
 

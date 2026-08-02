@@ -127,7 +127,9 @@ export function ContactSection() {
           <p className={`form-status ${status.type}`} role="status" aria-live="polite">
             {status.message}
           </p>
-          <p className="form-privacy">Your details are used only to respond to this enquiry.</p>
+          <p className="form-privacy">
+            Your details are used only to respond to this enquiry. <a href="/privacy">Privacy notice.</a>
+          </p>
         </form>
       </div>
     </section>
