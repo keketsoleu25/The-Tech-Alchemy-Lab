@@ -7,6 +7,7 @@ import { BrandMark } from "@/components/brand-mark";
 
 const navigation = [
   { label: "Home", href: "/#home" },
+  { label: "Systems", href: "/#featured-builds" },
   { label: "Services", href: "/#services" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Pricing", href: "/#pricing" },

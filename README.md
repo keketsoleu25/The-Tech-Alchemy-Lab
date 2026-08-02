@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 7 adds one consolidated featured-systems showcase: Tech Alchemy CRM is presented as the flagship full-stack product, with the Tech Alchemy Auth System retained as focused proof of authentication and authorization engineering. Phase 6 remains verified end to end with a real PostgreSQL record and delivered Resend email.
+Phase 8 replaces dead destinations with verified navigation and contact links, adds real Privacy and Website Terms routes, and connects the new featured-systems anchor across desktop, mobile and footer navigation. Unknown social profiles remain removed rather than being represented by placeholders.
 
 ## Stack
 
