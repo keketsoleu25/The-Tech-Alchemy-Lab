@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 4 adds four transparent ZAR investment packages, clear inclusions and scope notes on top of the verified portfolio and dynamic case-study routes. The original static implementation remains in `legacy/` as a content reference while each remaining section is migrated and verified.
+Phase 5 adds the founder story, philosophy, six operating values and an honest 2014–2026 journey timeline. The original static implementation remains in `legacy/` as a content reference while each remaining section is migrated and verified.
 
 ## Stack
 

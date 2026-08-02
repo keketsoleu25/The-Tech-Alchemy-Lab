@@ -1,3 +1,4 @@
+import { AboutSection } from "@/components/about-section";
 import { PortfolioSection } from "@/components/portfolio-section";
 import { PricingSection } from "@/components/pricing-section";
 
@@ -212,6 +213,7 @@ export default function HomePage() {
 
       <PortfolioSection />
       <PricingSection />
+      <AboutSection />
     </>
   );
 }
