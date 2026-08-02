@@ -1,4 +1,5 @@
 import { PortfolioSection } from "@/components/portfolio-section";
+import { PricingSection } from "@/components/pricing-section";
 
 const technologies = [
   "Next.js",
@@ -210,6 +211,7 @@ export default function HomePage() {
       </section>
 
       <PortfolioSection />
+      <PricingSection />
     </>
   );
 }
