@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum EmailDeliveryStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+model Inquiry {
+  id            String              @id @default(cuid())
+  firstName     String
+  lastName      String
+  email         String
+  phone         String?
+  service       String
+  budget        String
+  message       String
+  source        String              @default("website")
+  emailStatus   EmailDeliveryStatus @default(PENDING)
+  resendEmailId String?
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+  @@index([emailStatus])
+}

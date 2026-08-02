@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import { BrandMark } from "@/components/brand-mark";
 
 const navigation = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "About", href: "/#about" },
 ];
 
 export function SiteHeader() {
@@ -27,7 +27,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="shell header-inner">
-        <Link className="brand" href="#home" aria-label="The Tech Alchemy Lab home">
+        <Link className="brand" href="/#home" aria-label="The Tech Alchemy Lab home">
           <BrandMark />
           <span>
             Tech Alchemy
@@ -43,7 +43,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link className="header-cta" href="#contact">
+        <Link className="header-cta" href="/#contact">
           Get a quote
           <span aria-hidden="true">↗</span>
         </Link>
@@ -69,7 +69,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link className="mobile-cta" href="#contact" onClick={() => setIsOpen(false)}>
+          <Link className="mobile-cta" href="/#contact" onClick={() => setIsOpen(false)}>
             Start a project
             <span aria-hidden="true">↗</span>
           </Link>

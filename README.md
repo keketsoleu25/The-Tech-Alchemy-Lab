@@ -4,7 +4,7 @@ The agency website for The Tech Alchemy Lab, rebuilt with the same modern stack 
 
 ## Current phase
 
-Phase 1 establishes the Next.js application foundation, global visual system, responsive navigation, and footer. The original static implementation remains in `legacy/` as a content reference while each section is migrated and verified.
+Phase 6 adds a validated enquiry form, PostgreSQL persistence and Resend notification delivery. The form code is complete, but the phase remains unverified until the database migration is applied and a real email is delivered end to end.
 
 ## Stack
 
