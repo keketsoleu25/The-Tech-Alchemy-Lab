@@ -1955,19 +1955,23 @@ button:focus-visible {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
-  border-left: 1px solid rgba(255, 255, 255, 0.09);
+  gap: 24px;
 }
 
 .pricing-card {
   position: relative;
   display: flex;
   min-width: 0;
-  padding: 30px 24px 24px;
-  border-right: 1px solid rgba(255, 255, 255, 0.09);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-  background: rgba(10, 12, 8, 0.76);
+  padding: 32px 28px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(10, 12, 8, 0.82);
   flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.pricing-card:hover,
+.pricing-card:focus-within {
+  transform: translateY(-2px);
 }
 
 .pricing-card.is-featured {
@@ -2044,22 +2048,24 @@ button:focus-visible {
 
 .pricing-price {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 28px;
   color: var(--ivory);
 }
 
 .pricing-price > span:first-child {
-  margin-top: 8px;
+  margin-top: 4px;
   color: var(--gold);
   font-family: monospace;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .pricing-price strong {
-  margin-left: 5px;
+  margin-left: 4px;
   font-family: var(--display);
-  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
   letter-spacing: -0.055em;
   line-height: 1;
 }
@@ -2073,16 +2079,17 @@ button:focus-visible {
 
 .pricing-price-usd {
   margin: 4px 0 0;
-  color: #6b6d65;
+  color: #8b8f84;
   font-family: monospace;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.03em;
 }
 
 .pricing-cadence {
-  margin: 8px 0 0;
-  color: #70726b;
-  font-size: 9px;
+  margin: 12px 0 0;
+  color: #a1a49a;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .pricing-discovery {
@@ -2115,16 +2122,16 @@ button:focus-visible {
 
 .pricing-features > p {
   margin: 0 0 16px;
-  color: #85877f;
+  color: #b0b2aa;
   font-family: monospace;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
 .pricing-features ul {
   display: grid;
-  gap: 11px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2132,24 +2139,29 @@ button:focus-visible {
 
 .pricing-features li {
   display: grid;
-  grid-template-columns: 15px 1fr;
-  gap: 8px;
-  color: #a0a29a;
-  font-size: 10px;
-  line-height: 1.45;
+  grid-template-columns: 18px 1fr;
+  gap: 12px;
+  color: #c0c2b8;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .pricing-features li > span {
+  width: 18px;
+  min-width: 18px;
   color: var(--cyan);
   font-family: monospace;
+  font-size: 14px;
+  line-height: 1;
 }
 
 .pricing-features li.is-excluded {
-  color: #5e605a;
+  color: #918f86;
+  opacity: 0.8;
 }
 
 .pricing-features li.is-excluded > span {
-  color: #6d5265;
+  color: #d7b768;
 }
 
 .pricing-card > .button {
@@ -2203,9 +2215,9 @@ button:focus-visible {
 .pricing-note > a {
   flex: 0 0 auto;
   color: var(--cyan);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -2251,13 +2263,23 @@ button:focus-visible {
 .pricing-terms {
   max-width: 760px;
   margin: 22px auto 0;
-  color: #62645d;
+  color: #7d7f74;
   font-family: monospace;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.05em;
-  line-height: 1.6;
+  line-height: 1.75;
   text-align: center;
   text-transform: uppercase;
+}
+
+.pricing-summary-note,
+.pricing-scope-note {
+  max-width: 760px;
+  margin: 22px auto 0;
+  color: #b6b8ae;
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
 }
 
 .about {
@@ -3416,6 +3438,13 @@ button:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .pricing-care-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+  }
+
   .pricing-scope-policy dl {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3850,6 +3879,10 @@ button:focus-visible {
 
   .pricing-card header > p:not(.pricing-cadence) {
     margin-bottom: 8px;
+  }
+
+  .pricing-care-grid {
+    grid-template-columns: 1fr;
   }
 
   .pricing-note {

@@ -1,108 +1,205 @@
-const packages = [
+type PricingPackage = {
+  tier: string;
+  name: string;
+  tagline: string;
+  price: string;
+  cadence: string;
+  cta: string;
+  featured: boolean;
+  accent: string;
+  included: string[];
+  excluded: string[];
+  period?: string;
+  priceUsd?: string | null;
+  discoverySprint?: string;
+  valueStatement?: string;
+};
+
+const packages: PricingPackage[] = [
   {
     tier: "Launch",
     name: "Launchpad",
-    tagline: "For startups establishing a credible first presence.",
-    price: "12,500",
-    priceUsd: "approx. $680",
-    cadence: "Once-off project · 2-week delivery",
+    tagline:
+      "For startups, local businesses and professionals that need a credible online presence.",
+    price: "5,000",
+    cadence: "Estimated 7–10 business days",
     cta: "Start with Launchpad",
     featured: false,
     accent: "cyan",
     included: [
       "Up to 5 responsive pages",
-      "Mobile-first implementation",
-      "Contact / enquiry form",
-      "Foundational on-page SEO",
+      "Mobile-first responsive implementation",
+      "WhatsApp integration",
+      "Contact or enquiry form",
+      "Google Maps integration",
+      "Basic on-page SEO",
       "Analytics integration",
+      "Basic performance optimisation",
+      "Social media links",
+      "Custom favicon",
       "2 revision rounds",
       "30 days of post-launch defect support",
     ],
     excluded: [
+      "Domain registration",
+      "Hosting",
+      "Professional email",
       "E-commerce",
-      "CMS integration",
-      "Custom web applications",
-      "Complex third-party integrations",
-      "Advanced custom animation",
+      "Online booking",
+      "Logo design",
+      "Photography",
+      "Copywriting",
+      "Ongoing maintenance",
     ],
   },
   {
-    tier: "Growth",
+    tier: "Most popular",
     name: "Accelerator",
-    tagline: "For established businesses ready to scale their digital reach.",
-    price: "24,000",
-    priceUsd: "approx. $1,300",
-    cadence: "Once-off project · 4-week delivery",
-    cta: "Build with Accelerator",
+    tagline:
+      "For established businesses that want stronger lead generation and a more polished digital presence.",
+    price: "9,500",
+    cadence: "Estimated 2–3 weeks",
+    cta: "Choose Accelerator",
     featured: true,
     accent: "cyan",
     included: [
+      "Everything in Launchpad",
       "Up to 8 pages",
-      "Custom UI/UX design",
-      "CMS integration",
-      "Full on-page SEO implementation",
-      "E-commerce catalogue, up to 20 products",
-      "Analytics integration",
+      "Premium section animations",
+      "Gallery or portfolio section",
+      "Testimonials",
+      "FAQ section",
+      "Blog or simple CMS",
+      "Professional email setup",
+      "Google Business Profile optimisation",
+      "Stronger on-page SEO implementation",
+      "Lead capture forms",
       "3 revision rounds",
-      "30 days of post-launch defect support",
+      "45 days of post-launch defect support",
     ],
-    excluded: ["Custom third-party integrations", "50+ product catalogues", "Unlimited animation"],
+    excluded: [
+      "Domain and hosting costs are billed separately",
+      "E-commerce and booking systems are not included",
+      "Custom API integrations are quoted separately",
+    ],
   },
   {
-    tier: "Enterprise",
+    tier: "Scope-based",
     name: "Transmutation",
-    tagline: "For organisations requiring custom systems, integrations or complex digital architecture.",
-    price: "45,000",
-    priceUsd: null,
-    cadence: "Projects start at this investment · scope confirmed after discovery",
-    discoverySprint: "Paid discovery sprint: R3,500 — credited toward the final invoice if approved within 30 days.",
-    cta: "Book a discovery sprint",
+    tagline:
+      "For businesses that need functionality beyond a standard marketing website.",
+    price: "From 18,500",
+    cadence: "Estimated 4–8 weeks",
+    discoverySprint:
+      "Final pricing is confirmed after discovery and depends on features, integrations and complexity.",
+    cta: "Book a Discovery Call",
     featured: false,
     accent: "gold",
     included: [
-      "Custom web applications",
-      "Customer or staff portals",
-      "API integrations",
+      "Booking systems",
+      "Content management",
+      "Payment gateway integration",
+      "Customer portals",
+      "Advanced forms",
       "Workflow automation",
-      "Advanced database functionality",
-      "E-commerce catalogues exceeding 20 products",
-      "Complex role-based systems",
-      "Weekly project check-ins",
-      "Dedicated ownership",
-      "Estimated 6–10 week delivery",
-      "90 days of post-launch defect support",
-    ],
-    excluded: [],
-  },
-  {
-    tier: "Retainer",
-    name: "The Philosopher’s Stone",
-    tagline: "An ongoing technical partnership for businesses that need continuity, maintenance and regular improvements.",
-    price: "14,500",
-    priceUsd: "approx. $800/month",
-    period: "/month",
-    cadence: "3-month minimum commitment",
-    cta: "Discuss an ongoing partnership",
-    featured: false,
-    accent: "premium",
-    valueStatement:
-      "Keep the developer who built and understands your system available, so the product doesn’t become outdated, unstable or disconnected from the business.",
-    included: [
-      "Up to 25 hours per month",
-      "Priority support, response within 1 business day",
-      "Monthly strategy session",
-      "Monthly performance summary",
-      "Continuous improvements",
-      "Security and dependency maintenance",
-      "SEO maintenance",
-      "Hosting management",
-      "Direct access to the developer who understands the system",
+      "API integrations",
+      "Database functionality",
+      "Custom dashboards",
+      "Advanced analytics",
+      "Technical discovery",
+      "3 revision rounds",
+      "60 days of post-launch defect support",
     ],
     excluded: [
-      "Guaranteed resolution time (response window only)",
-      "Unused hours carried over (they expire monthly)",
-      "Hours beyond 25/month (billed at R750/hr or quoted separately)",
-      "Third-party hosting, domain and subscription costs",
+      "Final pricing is confirmed after discovery",
+      "Custom feature scope quoted separately",
+      "Third-party service fees",
+    ],
+  },
+  {
+    tier: "Enterprise",
+    name: "Custom systems",
+    tagline:
+      "For organisations requiring custom digital systems or complex software architecture.",
+    price: "From 35,000",
+    cadence: "Final proposal after technical discovery",
+    cta: "Discuss a Custom System",
+    featured: false,
+    accent: "premium",
+    included: [
+      "CRM systems",
+      "Internal dashboards",
+      "Inventory systems",
+      "Customer or staff portals",
+      "Workflow automation",
+      "Role-based systems",
+      "SaaS products",
+      "Complex database architecture",
+      "Third-party integrations",
+      "Custom reporting",
+      "Ongoing technical ownership",
+    ],
+    excluded: [
+      "Pricing depends on scope and complexity",
+      "Large system upgrades quoted separately",
+    ],
+  },
+];
+
+const carePlans = [
+  {
+    name: "Care Essential",
+    price: "750",
+    period: "/month",
+    tagline:
+      "Stability and monitoring for websites that need dependable upkeep.",
+    cta: "Talk about Essential",
+    featured: false,
+    accent: "cyan",
+    included: [
+      "Website uptime monitoring",
+      "Dependency and security updates",
+      "Backups where applicable",
+      "Up to 30 minutes of minor content changes",
+      "Basic technical support",
+      "Monthly maintenance check",
+    ],
+  },
+  {
+    name: "Care Growth",
+    price: "1,500",
+    period: "/month",
+    tagline:
+      "Proactive improvements, monitoring and a faster response rhythm.",
+    cta: "Talk about Growth",
+    featured: false,
+    accent: "gold",
+    included: [
+      "Everything in Essential",
+      "Up to 2 hours of content or design updates",
+      "Performance monitoring",
+      "Basic SEO monitoring",
+      "Analytics summary",
+      "Priority response",
+      "Monthly improvement recommendations",
+    ],
+  },
+  {
+    name: "Technical Partner",
+    price: "From 3,500",
+    tagline:
+      "A trusted technical partner for ongoing performance, strategy and growth.",
+    cta: "Talk about Technical Partner",
+    featured: false,
+    accent: "premium",
+    included: [
+      "Priority technical support",
+      "Feature improvements",
+      "Hosting and deployment oversight",
+      "Performance optimisation",
+      "Analytics review",
+      "Monthly strategy session",
+      "Technical roadmap guidance",
     ],
   },
 ];
@@ -125,6 +222,9 @@ export function PricingSection() {
             Every package starts with a complimentary 30-minute strategy call. Prices
             are shown in South African Rand and final scope is confirmed before work begins.
           </p>
+          <p className="pricing-summary-note">
+            Custom quotes are available when a project does not fit neatly into one package.
+          </p>
         </div>
 
         <div className="pricing-grid">
@@ -141,7 +241,7 @@ export function PricingSection() {
                 <div className="pricing-price">
                   <span>R</span>
                   <strong>{item.price}</strong>
-                  {item.period && <small>{item.period}</small>}
+                  {item.period ? <small>{item.period}</small> : null}
                 </div>
                 {item.priceUsd && <p className="pricing-price-usd">{item.priceUsd}</p>}
                 <p className="pricing-cadence">{item.cadence}</p>
@@ -172,6 +272,50 @@ export function PricingSection() {
               </a>
             </article>
           ))}
+        </div>
+
+        <div className="pricing-care">
+          <div className="pricing-care-heading">
+            <p className="eyebrow">
+              <span aria-hidden="true" />
+              Care plans
+            </p>
+            <h3>Ongoing support for stable, growing websites.</h3>
+            <p>Choose a care plan for monitoring, updates and priority technical attention.</p>
+          </div>
+
+          <div className="pricing-care-grid">
+            {carePlans.map((plan) => (
+              <article
+                className={`pricing-card accent-${plan.accent}`}
+                key={plan.name}
+              >
+                <header>
+                  <span className="pricing-tier">Care plan</span>
+                  <h3>{plan.name}</h3>
+                  <p>{plan.tagline}</p>
+                  <div className="pricing-price">
+                    <span>R</span>
+                    <strong>{plan.price}</strong>
+                    {plan.period && <small>{plan.period}</small>}
+                  </div>
+                </header>
+
+                <div className="pricing-features">
+                  <p>What’s included</p>
+                  <ul>
+                    {plan.included.map((feature) => (
+                      <li key={feature}><span aria-hidden="true">✓</span>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a className="button button-secondary" href="#contact">
+                  {plan.cta}<span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="pricing-note">
@@ -232,6 +376,10 @@ export function PricingSection() {
             </div>
           </dl>
         </div>
+
+        <p className="pricing-scope-note">
+          All projects require an agreed scope and deposit before work begins. Additional requests outside the approved scope are quoted separately.
+        </p>
 
         <p className="pricing-terms">
           Prices are shown in South African Rand. USD figures are approximate estimates only —
