@@ -278,10 +278,12 @@ export function PricingSection() {
           <div className="pricing-care-heading">
             <p className="eyebrow">
               <span aria-hidden="true" />
-              Care plans
+              Website Care Plans
             </p>
-            <h3>Ongoing support for stable, growing websites.</h3>
-            <p>Choose a care plan for monitoring, updates and priority technical attention.</p>
+            <h3 className="care-heading-title">Keep Your Website Performing at Its Best</h3>
+            <p className="care-heading-desc">
+              Your website should continue working long after launch. Choose a maintenance plan that provides proactive updates, security, performance monitoring and priority technical support as your business grows.
+            </p>
           </div>
 
           <div className="pricing-care-grid">

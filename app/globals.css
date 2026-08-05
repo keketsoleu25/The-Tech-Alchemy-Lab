@@ -1950,6 +1950,41 @@ button:focus-visible {
   line-height: 1.75;
 }
 
+/* Care Plans heading block visual polish */
+.pricing-care {
+  margin-top: 5.5rem; /* section top margin: 5-6rem */
+}
+
+.pricing-care-heading {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 18px;
+  margin-bottom: 0; /* spacing managed by title/desc below */
+  padding-block: 2.5rem 2.5rem; /* generous spacing above and below */
+}
+
+.pricing-care-heading .eyebrow {
+  justify-content: center;
+}
+
+.pricing-care-heading .care-heading-title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.pricing-care-heading .care-heading-desc {
+  color: #b8b9b1; /* lighter muted colour */
+  font-size: 1.1rem; /* within 1.05 - 1.15rem */
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 0 3rem; /* description bottom margin */
+}
+
 .pricing-grid {
   position: relative;
   display: grid;
