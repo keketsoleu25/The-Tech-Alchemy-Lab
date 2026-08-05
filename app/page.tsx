@@ -83,7 +83,7 @@ const structuredData = {
       url: SITE_URL,
       logo: `${SITE_URL}/icon.svg`,
       image: `${SITE_URL}/opengraph-image`,
-      email: "techalchemist407@gmail.com",
+      email: "keketsoleu25@gmail.com",
       telephone: "+27 69 260 2709",
       description: SITE_DESCRIPTION,
       address: {
