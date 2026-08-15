@@ -98,7 +98,7 @@ const packages: PricingPackage[] = [
     name: "Transmutation",
     tagline:
       "For businesses that need functionality beyond a standard marketing website.",
-    price: "From 18,500",
+    price: "From 12,500",
     cadence: "Estimated 4–8 weeks",
     discoverySprint:
       "Final pricing is confirmed after discovery and depends on features, integrations and complexity.",
@@ -131,7 +131,7 @@ const packages: PricingPackage[] = [
     name: "Custom systems",
     tagline:
       "For organisations requiring custom digital systems or complex software architecture.",
-    price: "From 35,000",
+    price: "From 25,000",
     cadence: "Final proposal after technical discovery",
     cta: "Discuss a Custom System",
     featured: false,
