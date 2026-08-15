@@ -214,6 +214,24 @@ const carePlans = [
   },
 ];
 
+const renderPrice = (price: string, period?: string) => {
+  const isStartingPrice = price.startsWith("From ");
+
+  return (
+    <div className="pricing-price">
+      {isStartingPrice ? (
+        <strong>{price.replace("From ", "From R")}</strong>
+      ) : (
+        <>
+          <span>R</span>
+          <strong>{price}</strong>
+        </>
+      )}
+      {period ? <small>{period}</small> : null}
+    </div>
+  );
+};
+
 export function PricingSection() {
   return (
     <section className="pricing" id="pricing" aria-labelledby="pricing-title">
@@ -248,11 +266,7 @@ export function PricingSection() {
                 <span className="pricing-tier">{item.tier}</span>
                 <h3>{item.name}</h3>
                 <p>{item.tagline}</p>
-                <div className="pricing-price">
-                  <span>R</span>
-                  <strong>{item.price}</strong>
-                  {item.period ? <small>{item.period}</small> : null}
-                </div>
+                {renderPrice(item.price, item.period)}
                 {item.priceUsd && <p className="pricing-price-usd">{item.priceUsd}</p>}
                 <p className="pricing-cadence">{item.cadence}</p>
               </header>
@@ -306,11 +320,7 @@ export function PricingSection() {
                   <span className="pricing-tier">Care plan</span>
                   <h3>{plan.name}</h3>
                   <p>{plan.tagline}</p>
-                  <div className="pricing-price">
-                    <span>R</span>
-                    <strong>{plan.price}</strong>
-                    {plan.period && <small>{plan.period}</small>}
-                  </div>
+                  {renderPrice(plan.price, plan.period)}
                 </header>
 
                 <div className="pricing-features">
