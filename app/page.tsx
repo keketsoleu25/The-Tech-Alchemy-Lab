@@ -133,22 +133,24 @@ export default function HomePage() {
             </p>
 
             <h1 id="hero-title">
-              I turn code into
-              <strong>digital gold.</strong>
+              We build digital systems that help businesses
+              <strong>look credible, work smarter & grow.</strong>
             </h1>
 
             <p className="hero-intro">
-              I forge strategic websites and digital products that help ambitious
-              African businesses earn trust, capture opportunities and grow.
+              The Tech Alchemy Lab helps African businesses build professional websites,
+              improve their digital presence and turn manual processes into practical
+              digital systems — from business websites and online bookings to dashboards,
+              portals and custom software.
             </p>
 
             <div className="hero-actions">
               <a className="button button-primary" href="#contact">
-                Start your transformation
+                Get a quote
                 <span aria-hidden="true">↗</span>
               </a>
               <a className="button button-secondary" href="#portfolio">
-                View my work
+                View our work
                 <span aria-hidden="true">↓</span>
               </a>
             </div>
