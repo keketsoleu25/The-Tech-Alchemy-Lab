@@ -215,18 +215,13 @@ const carePlans = [
 ];
 
 const renderPrice = (price: string, period?: string) => {
-  const isStartingPrice = price.startsWith("From ");
+  const displayPrice = price.startsWith("From ")
+    ? price.replace("From ", "From R")
+    : `R${price}`;
 
   return (
     <div className="pricing-price">
-      {isStartingPrice ? (
-        <strong>{price.replace("From ", "From R")}</strong>
-      ) : (
-        <>
-          <span>R</span>
-          <strong>{price}</strong>
-        </>
-      )}
+      <strong>{displayPrice}</strong>
       {period ? <small>{period}</small> : null}
     </div>
   );
