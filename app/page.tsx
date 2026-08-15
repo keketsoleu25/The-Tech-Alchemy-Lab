@@ -132,7 +132,14 @@ export default function HomePage() {
               Johannesburg-based digital studio
             </p>
 
-            <h1 id="hero-title">
+            <h1
+              id="hero-title"
+              style={{
+                fontSize: "clamp(3.6rem, 5.3vw, 4.25rem)",
+                lineHeight: 0.94,
+                letterSpacing: "-0.055em",
+              }}
+            >
               We build digital systems that help businesses
               <strong>look credible, work smarter & grow.</strong>
             </h1>
