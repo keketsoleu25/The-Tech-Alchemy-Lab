@@ -1,4 +1,4 @@
-export type ProjectCategory = "Education" | "Business" | "Facility" | "Non-profit";
+export type ProjectCategory = "Education" | "Business" | "Platform" | "Non-profit";
 
 export type Project = {
   slug: string;
@@ -9,7 +9,8 @@ export type Project = {
   tags: string[];
   summary: string;
   introduction: string;
-  liveUrl: string;
+  projectUrl: string;
+  projectLinkLabel?: string;
   focus: string;
   overview: string;
   challenge: string;
@@ -35,7 +36,7 @@ export const projects: Project[] = [
       "A trust-building website for parents with fast performance, clear enrolment details and contact integration.",
     introduction:
       "A professional website for a registered daycare that builds parent trust, improves usability and supports fast local discovery.",
-    liveUrl: "https://bambananidaycare.co.za",
+    projectUrl: "https://bambananidaycare.co.za",
     focus: "Trust, mobile performance, SEO",
     overview:
       "A registered daycare and aftercare centre needed a polished digital front door that reassures parents and simplifies enquiries.",
@@ -78,7 +79,7 @@ export const projects: Project[] = [
       "A clean, informative website that highlights the mission, programmes and a donation-ready structure.",
     introduction:
       "A mission-led website designed to showcase educational programmes, community impact and donor readiness.",
-    liveUrl: "https://www.ithacademic-foundation.co.za",
+    projectUrl: "https://www.ithacademic-foundation.co.za",
     focus: "Mission, programmes, donations",
     overview:
       "An educational foundation focused on youth development, tutoring and community upliftment across South Africa.",
@@ -121,7 +122,7 @@ export const projects: Project[] = [
       "A bold brand website communicating African innovation through polished layouts and performance.",
     introduction:
       "A modern brand website for African entrepreneurship, designed to feel premium, fast and memorable.",
-    liveUrl: "https://afromillionial.co.za",
+    projectUrl: "https://afromillionial.co.za",
     focus: "Brand identity, performance",
     overview:
       "A modern website for an entrepreneur-focused business showcasing African innovation and ambition.",
@@ -154,46 +155,47 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "gtv-fms",
-    name: "GTV FMS",
-    client: "GTV FMS",
-    industry: "Facility Management",
-    categories: ["Facility"],
-    tags: ["Facility Management", "Corporate", "Credibility"],
+    slug: "tech-alchemy-academy",
+    name: "Tech Alchemy Academy",
+    client: "The Tech Alchemy Lab",
+    industry: "Education Technology",
+    categories: ["Education", "Platform"],
+    tags: ["LMS", "Full-stack", "Gamification"],
     summary:
-      "A modern website concept positioning a facilities company as trusted, capable and mobile-ready.",
+      "A full-stack learning platform combining structured DSA lessons, quizzes, coding challenges, progression and an audited admin workspace.",
     introduction:
-      "A facilities management website concept focused on corporate credibility, service clarity and mobile responsiveness.",
-    liveUrl: "https://gtvfms.netlify.app",
-    focus: "Corporate branding, CTAs",
+      "A gamified learning management system designed to turn Data Structures and Algorithms into a structured, measurable learning journey.",
+    projectUrl: "https://github.com/keketsoleu25/tech-alchemy-academy",
+    projectLinkLabel: "View source",
+    focus: "Learning flows, reward integrity, administration",
     overview:
-      "A facilities management company required a polished digital presence to build trust with corporate buyers.",
+      "Tech Alchemy Academy is an internal product built to make technical learning more structured, motivating and operationally manageable.",
     challenge:
-      "The company needed a website that looked premium, communicated services clearly and generated confident enquiries.",
+      "Technical learners need more than disconnected notes: they need guided progression, practice, feedback and rewards that cannot be manipulated.",
     result:
-      "A structured website concept with clear service pages, visible calls to action and modern corporate branding.",
+      "A database-backed LMS pilot with authenticated learners, persistent progress, server-scored quizzes, coding challenges, achievements, analytics and an admin control room.",
     detailedChallenge:
-      "Facilities management audiences need fast access to services, team credibility and evidence of reliability. The previous concept lacked this clarity.",
+      "Learning DSA can feel fragmented when lessons, practice and progress tracking live in separate places. The platform needed one coherent journey while keeping assessment answers, challenge tests and XP awards authoritative on the server.",
     solution: [
-      "Created a corporate homepage leading with services, credibility and contact.",
-      "Structured service pages around clear benefits and outcomes for decision-makers.",
-      "Built mobile-first navigation so prospects can enquire from any device.",
-      "Used refined layouts and brand cues to communicate trust quickly.",
+      "Structured courses into modules and reusable lessons with XP-based progression gates.",
+      "Built persisted quiz attempts, server-side scoring and first-pass-only XP rewards.",
+      "Created a Challenge Arena that delegates code execution to an isolated runner and protects hidden tests.",
+      "Added an Academy Control Room for curriculum publishing, learner roles, achievements, analytics and audit history.",
     ],
-    stack: ["HTML5", "Tailwind CSS", "Responsive Design", "Corporate UI"],
+    stack: ["Next.js 16", "React 19", "TypeScript", "Prisma 7", "Neon PostgreSQL", "NextAuth", "Zod"],
     process: [
-      "Service mapping and trust audit",
-      "Corporate information-hierarchy prototype",
-      "Responsive implementation with clear CTAs",
+      "Learning-journey and progression design",
+      "Data modelling for curriculum, attempts and rewards",
+      "Learner experience and administration implementation",
     ],
     impact:
-      "The website concept positions GTV FMS as a modern, credible facilities partner and encourages enquiries from enterprise buyers.",
+      "The Academy demonstrates the Lab’s ability to engineer a multi-role product with real data, guarded business rules and operational tooling—not only marketing websites.",
     lessons:
-      "Corporate brands win when service clarity, trust signals and user flow align. Every page should quickly answer why the company is the right choice.",
+      "Gamification is only useful when its rules are trustworthy. Progress, scoring and rewards must be enforced by the server while the interface keeps the learner focused.",
     highlights: [
-      { title: "Corporate homepage", description: "A professional first impression for corporate buyers." },
-      { title: "Service clarity", description: "Clear service descriptions focused on trust and outcomes." },
-      { title: "Mobile CTA flow", description: "Responsive enquiry paths available on any device." },
+      { title: "Guided mastery", description: "Courses, modules, lessons and progression tracked per learner." },
+      { title: "Challenge Arena", description: "Authenticated submissions with isolated execution and protected tests." },
+      { title: "Academy control room", description: "Publishing, roles, analytics and audit history in one workspace." },
     ],
   },
 ];

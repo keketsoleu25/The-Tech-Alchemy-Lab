@@ -35,6 +35,7 @@ const sections = [
           <li>Email address and optional phone or WhatsApp number</li>
           <li>Requested service and indicative budget range</li>
           <li>Your project description</li>
+          <li>Reference links, documents and images you choose to attach</li>
         </ul>
         <p>
           The website does not currently use advertising or marketing analytics cookies. Hosting
@@ -68,6 +69,7 @@ const sections = [
         <p>The website relies on specialist providers to operate the enquiry flow:</p>
         <ul>
           <li>Vercel hosts and delivers the website</li>
+          <li>Vercel Blob stores submitted attachments in private object storage</li>
           <li>Neon provides PostgreSQL database storage</li>
           <li>Resend delivers enquiry notification emails</li>
         </ul>
@@ -93,6 +95,12 @@ const sections = [
         <p>
           Reasonable technical and organisational safeguards are used, but no internet or storage
           system can be guaranteed completely secure.
+        </p>
+        <p>
+          Uploaded files are restricted by type and size, checked before they are connected to a
+          request, and stored privately. Notification-email download links are time-limited. Do
+          not upload passwords, payment-card details or information that is not needed for the
+          project or support request.
         </p>
       </>
     ),
@@ -131,7 +139,7 @@ export default function PrivacyPage() {
       eyebrow="Privacy / POPIA notice"
       title="Privacy notice"
       introduction="A plain-language explanation of what happens to the information you submit through The Tech Alchemy Lab website."
-      updated="02 August 2026"
+      updated="20 August 2026"
       sections={sections}
     />
   );
