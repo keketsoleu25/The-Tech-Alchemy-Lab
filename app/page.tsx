@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/about-section";
+import { ClientPathsSection } from "@/components/client-paths-section";
 import { ContactSection } from "@/components/contact-section";
 import { FeaturedBuildsSection } from "@/components/featured-builds-section";
 import { PortfolioSection } from "@/components/portfolio-section";
@@ -152,8 +153,8 @@ export default function HomePage() {
             </p>
 
             <div className="hero-actions">
-              <a className="button button-primary" href="#contact">
-                Get a quote
+              <a className="button button-primary" href="/start-project">
+                Start a project
                 <span aria-hidden="true">↗</span>
               </a>
               <a className="button button-secondary" href="#portfolio">
@@ -281,6 +282,7 @@ export default function HomePage() {
       <PortfolioSection />
       <PricingSection />
       <AboutSection />
+      <ClientPathsSection />
       <ContactSection />
     </>
   );

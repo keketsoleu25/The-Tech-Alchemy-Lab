@@ -31,3 +31,100 @@ model Inquiry {
   @@index([createdAt])
   @@index([emailStatus])
 }
+
+model WebsiteIntake {
+  id            String              @id @default(cuid())
+  reference     String              @unique
+  fullName      String
+  businessName  String
+  email         String
+  phone         String?
+  role          String?
+  industry      String?
+  location      String?
+  currentWebsite String?
+  projectType   String
+  primaryGoal   String
+  budget        String
+  timeline      String
+  referenceLinks Json?
+  payload       Json
+  consent       Boolean
+  status        String              @default("NEW")
+  emailStatus   EmailDeliveryStatus @default(PENDING)
+  resendEmailId String?
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+  attachments   UploadAttachment[]
+
+  @@index([email])
+  @@index([createdAt])
+  @@index([status])
+}
+
+model SupportRequest {
+  id            String              @id @default(cuid())
+  reference     String              @unique
+  clientName    String
+  businessName  String
+  email         String
+  phone         String?
+  projectName   String?
+  requestType   String
+  priority      String
+  subject       String
+  description   String
+  affectedUrl   String?
+  referenceLinks Json?
+  consent       Boolean
+  status        String              @default("OPEN")
+  emailStatus   EmailDeliveryStatus @default(PENDING)
+  resendEmailId String?
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+  attachments   UploadAttachment[]
+
+  @@index([email])
+  @@index([createdAt])
+  @@index([priority])
+  @@index([status])
+}
+
+model UploadSession {
+  id            String             @id @default(cuid())
+  secretHash    String
+  purpose       String
+  maxFiles      Int
+  reservedFiles Int                @default(0)
+  requestKeyHash String?
+  expiresAt     DateTime
+  consumedAt    DateTime?
+  createdAt     DateTime           @default(now())
+  attachments   UploadAttachment[]
+
+  @@index([expiresAt])
+  @@index([purpose, consumedAt])
+  @@index([requestKeyHash, createdAt])
+}
+
+model UploadAttachment {
+  id               String          @id @default(cuid())
+  uploadSessionId  String
+  websiteIntakeId  String?
+  supportRequestId String?
+  pathname         String          @unique
+  url              String
+  downloadUrl      String
+  originalName     String
+  contentType      String
+  size             Int
+  createdAt        DateTime        @default(now())
+
+  uploadSession  UploadSession  @relation(fields: [uploadSessionId], references: [id], onDelete: Restrict)
+  websiteIntake  WebsiteIntake? @relation(fields: [websiteIntakeId], references: [id], onDelete: Cascade)
+  supportRequest SupportRequest? @relation(fields: [supportRequestId], references: [id], onDelete: Cascade)
+
+  @@index([uploadSessionId])
+  @@index([websiteIntakeId])
+  @@index([supportRequestId])
+}

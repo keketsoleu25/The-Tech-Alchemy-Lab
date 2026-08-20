@@ -10,7 +10,7 @@ const filters: Array<"All Work" | ProjectCategory> = [
   "All Work",
   "Education",
   "Business",
-  "Facility",
+  "Platform",
   "Non-profit",
 ];
 
@@ -35,7 +35,7 @@ export function PortfolioSection() {
             </h2>
           </div>
           <p>
-            Four live projects showing how strategy, interface design and practical
+            Four production and product projects showing how strategy, interface design and practical
             engineering combine to build trust and create clearer customer journeys.
           </p>
         </div>
@@ -70,8 +70,8 @@ export function PortfolioSection() {
                   <Link href={`/portfolio/${project.slug}`}>
                     View case study <span aria-hidden="true">↗</span>
                   </Link>
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer">
-                    Visit live site
+                  <a href={project.projectUrl} target="_blank" rel="noreferrer">
+                    {project.projectLinkLabel ?? "Visit live site"}
                   </a>
                 </div>
               </div>

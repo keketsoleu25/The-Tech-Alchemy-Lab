@@ -63,8 +63,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <h1>{project.name}</h1>
             <p className="case-intro">{project.introduction}</p>
             <div className="case-actions">
-              <a className="button button-primary" href={project.liveUrl} target="_blank" rel="noreferrer">
-                Visit live website <span aria-hidden="true">↗</span>
+              <a className="button button-primary" href={project.projectUrl} target="_blank" rel="noreferrer">
+                {project.projectLinkLabel ?? "Visit live website"} <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
@@ -147,7 +147,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         <nav className="case-next" aria-label="Case study navigation">
           <Link href="/#portfolio">Explore all work</Link>
-          <a href={project.liveUrl} target="_blank" rel="noreferrer">Visit {project.name} ↗</a>
+          <a href={project.projectUrl} target="_blank" rel="noreferrer">
+            {project.projectLinkLabel ?? `Visit ${project.name}`} ↗
+          </a>
         </nav>
       </div>
     </article>

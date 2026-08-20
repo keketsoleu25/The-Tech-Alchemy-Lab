@@ -3,6 +3,8 @@ import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
 
 const footerNavigation = [
+  { label: "Start a project", href: "/start-project" },
+  { label: "Client support", href: "/support" },
   { label: "Featured systems", href: "/#featured-builds" },
   { label: "Services", href: "/#services" },
   { label: "Portfolio", href: "/#portfolio" },
@@ -22,10 +24,10 @@ export function SiteFooter() {
               <span>digital gold.</span>
             </h2>
           </div>
-          <a className="footer-contact" href="mailto:techalchemist407@gmail.com">
-            Start a conversation
+          <Link className="footer-contact" href="/start-project">
+            Start your website brief
             <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </div>
 
         <div className="footer-grid">

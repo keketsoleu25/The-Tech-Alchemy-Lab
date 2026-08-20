@@ -7,11 +7,11 @@ import { BrandMark } from "@/components/brand-mark";
 
 const navigation = [
   { label: "Home", href: "/#home" },
-  { label: "Systems", href: "/#featured-builds" },
   { label: "Services", href: "/#services" },
-  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Work", href: "/#portfolio" },
   { label: "Pricing", href: "/#pricing" },
   { label: "About", href: "/#about" },
+  { label: "Support", href: "/support" },
 ];
 
 export function SiteHeader() {
@@ -44,8 +44,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link className="header-cta" href="/#contact">
-          Get a quote
+        <Link className="header-cta" href="/start-project">
+          Start a project
           <span aria-hidden="true">↗</span>
         </Link>
 
@@ -70,7 +70,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link className="mobile-cta" href="/#contact" onClick={() => setIsOpen(false)}>
+          <Link className="mobile-cta" href="/start-project" onClick={() => setIsOpen(false)}>
             Start a project
             <span aria-hidden="true">↗</span>
           </Link>
