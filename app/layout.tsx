@@ -3,9 +3,11 @@ import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react"
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 import "./globals.css";
+import "./theme.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -57,19 +59,23 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "dark",
-  themeColor: "#070806",
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#070806" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f5ef" },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en-ZA">
+    <html lang="en-ZA" suppressHydrationWarning>
       <body>
         <div className="site-frame">
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />
         </div>
+        <ThemeToggle />
         <Analytics />
       </body>
     </html>

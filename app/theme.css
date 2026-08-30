@@ -1,0 +1,120 @@
+/* Light/dark theme layer. The original dark Lab aesthetic remains the default. */
+
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink: #f7f5ef;
+  --ink-soft: #efede6;
+  --panel: #ffffff;
+  --line: rgba(38, 45, 51, 0.13);
+  --gold: #a96f00;
+  --gold-bright: #c48700;
+  --cyan: #007b82;
+  --violet: #7b32b3;
+  --neon-line: rgba(0, 123, 130, 0.2);
+  --neon-gradient: linear-gradient(110deg, var(--cyan), var(--violet));
+  --ivory: #171a1c;
+  --muted: #62676b;
+}
+
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(0, 123, 130, 0.055), transparent 28%),
+    radial-gradient(circle at 92% 12%, rgba(123, 50, 179, 0.05), transparent 26%),
+    var(--ink);
+  color: var(--ivory);
+}
+
+:root[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(0, 123, 130, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123, 50, 179, 0.035) 1px, transparent 1px);
+}
+
+:root[data-theme="light"] .site-header {
+  border-bottom-color: rgba(23, 26, 28, 0.08);
+  background: rgba(247, 245, 239, 0.9);
+}
+
+:root[data-theme="light"] .desktop-nav a,
+:root[data-theme="light"] .mobile-nav a {
+  color: #4f5559;
+}
+
+:root[data-theme="light"] .desktop-nav a:hover,
+:root[data-theme="light"] .desktop-nav a:focus-visible,
+:root[data-theme="light"] .mobile-nav a:hover,
+:root[data-theme="light"] .mobile-nav a:focus-visible {
+  color: #171a1c;
+}
+
+:root[data-theme="light"] .mobile-nav {
+  background: rgba(247, 245, 239, 0.98);
+}
+
+:root[data-theme="light"] [class*="card"],
+:root[data-theme="light"] [class*="panel"] {
+  border-color: rgba(23, 26, 28, 0.1);
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 9px 13px;
+  border: 1px solid rgba(0, 245, 255, 0.32);
+  border-radius: 999px;
+  background: rgba(7, 8, 6, 0.88);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
+  color: var(--ivory);
+  font: 700 11px/1 var(--body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+}
+
+.theme-toggle > span:first-child {
+  font-size: 16px;
+  line-height: 1;
+}
+
+:root[data-theme="light"] .theme-toggle {
+  border-color: rgba(0, 123, 130, 0.25);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 30px rgba(24, 28, 31, 0.12);
+  color: #171a1c;
+}
+
+@media (max-width: 640px) {
+  .theme-toggle {
+    right: 12px;
+    bottom: 12px;
+    min-width: 42px;
+    padding-inline: 11px;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}
