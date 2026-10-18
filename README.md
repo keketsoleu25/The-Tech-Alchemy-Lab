@@ -610,3 +610,13 @@ Johannesburg, South Africa
 Copyright © 2026 Keketso Leu. All rights reserved.
 
 This source code is available for portfolio review only. No permission is granted to copy, modify, distribute, sublicense or use it commercially without written permission.
+---
+
+## Product in development: Alchemy Poultry & Farming
+
+A separate, mobile-first poultry record-keeping product from The Tech Alchemy Lab for broiler and layer farmers. The deployed MVP covers flock records, mortality, egg production, feed use, treatments, basic finances, reports, and JSON backup/restore. Its current data storage is browser-local, so cloud sync and multi-device access are not yet available.
+
+- **Live MVP:** https://alchemy-poultry-farming.vercel.app/
+- **Product README and roadmap:** [products/alchemy-poultry-farming/README.md](products/alchemy-poultry-farming/README.md)
+- **Next priority:** verify the offline experience and core record workflows with pilot farmers before expanding the product.
+- **Future direction:** vision and thermal readers are planned as later hardware extensions, not current capabilities.
