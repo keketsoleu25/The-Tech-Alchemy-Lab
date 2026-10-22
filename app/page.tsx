@@ -5,15 +5,6 @@ import { PortfolioSection } from "@/components/portfolio-section";
 import { PricingSection } from "@/components/pricing-section";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
-const technologies = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Prisma",
-  "PostgreSQL",
-  "Tailwind CSS",
-];
-
 const services = [
   {
     number: "01",
