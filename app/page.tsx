@@ -129,26 +129,23 @@ export default function HomePage() {
           <div className="hero-copy">
             <p className="eyebrow">
               <span aria-hidden="true" />
-              Johannesburg-based digital studio
+              Digital solutions for small businesses
             </p>
 
             <h1
               id="hero-title"
               style={{
-                fontSize: "clamp(3.6rem, 5.3vw, 4.25rem)",
-                lineHeight: 0.94,
+                fontSize: "clamp(3rem, 6.5vw, 6.25rem)",
+                lineHeight: 0.98,
                 letterSpacing: "-0.055em",
               }}
             >
-              We build digital systems that help businesses
-              <strong>look credible, work smarter & grow.</strong>
+              Websites & business software.
+              <strong>You bring the idea. We build it.</strong>
             </h1>
 
             <p className="hero-intro">
-              The Tech Alchemy Lab helps African businesses build professional websites,
-              improve their digital presence and turn manual processes into practical
-              digital systems — from business websites and online bookings to dashboards,
-              portals and custom software.
+              Practical digital tools that help small businesses look credible, reach customers and work smarter.
             </p>
 
             <div className="hero-actions">
@@ -162,73 +159,9 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="technology-list" aria-label="Core technologies">
-              {technologies.map((technology) => (
-                <span key={technology}>{technology}</span>
-              ))}
-            </div>
-          </div>
-
-          <div className="hero-visual" aria-label="Digital product transformation system">
-            <div className="visual-topline">
-              <span>Alchemy blueprint</span>
-              <span className="system-live">
-                <i aria-hidden="true" /> System online
-              </span>
-            </div>
-
-            <div className="forge-stage" aria-hidden="true">
-              <div className="orbit orbit-outer">
-                <i />
-              </div>
-              <div className="orbit orbit-inner">
-                <i />
-              </div>
-              <div className="forge-core">
-                <span>Idea</span>
-                <b>✦</b>
-                <strong>Impact</strong>
-              </div>
-              <span className="formula formula-one">01 / DISCOVER</span>
-              <span className="formula formula-two">02 / FORGE</span>
-              <span className="formula formula-three">03 / SCALE</span>
-            </div>
-
-            <div className="visual-metrics">
-              <div>
-                <span>Build mode</span>
-                <strong>Full-stack</strong>
-              </div>
-              <div>
-                <span>Core focus</span>
-                <strong>Conversion</strong>
-              </div>
-              <div>
-                <span>Output</span>
-                <strong>Growth</strong>
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="shell hero-stats" aria-label="Studio statistics">
-          <div>
-            <strong>10+</strong>
-            <span>Projects delivered</span>
-          </div>
-          <div>
-            <strong>Full-stack</strong>
-            <span>Design to deployment</span>
-          </div>
-          <div>
-            <strong>3+ years</strong>
-            <span>Building experience</span>
-          </div>
-          <div>
-            <strong>🇿🇦</strong>
-            <span>Based in Joburg</span>
-          </div>
-        </div>
       </section>
 
       <FeaturedBuildsSection />
