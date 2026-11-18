@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import "./ecd.css";
 
 export const metadata: Metadata = {
   title: "ECD Website Design & Development | The Tech Alchemy Lab",
