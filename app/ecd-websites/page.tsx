@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 const packages = [
   {
     name: "ECD Essentials",
+    featured: false,
     price: "R4,500",
     pages: "Up to 3 pages",
     description: "A clear first online presence for smaller centres.",
@@ -50,6 +51,7 @@ const packages = [
   },
   {
     name: "ECD Plus",
+    featured: false,
     price: "R9,500",
     pages: "Up to 8 pages",
     description: "A more comprehensive digital presence for centres with broader information needs.",
