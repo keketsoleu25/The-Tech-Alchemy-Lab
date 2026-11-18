@@ -3,6 +3,7 @@ type PricingPackage = {
   name: string;
   tagline: string;
   price: string;
+  originalPrice?: string;
   cadence: string;
   cta: string;
   featured: boolean;
@@ -21,7 +22,8 @@ const packages: PricingPackage[] = [
     name: "Starter",
     tagline:
       "For small businesses that need a simple, credible online presence without unnecessary complexity.",
-    price: "3,000",
+    price: "1,999",
+    originalPrice: "3,000",
     cadence: "Estimated 5–7 business days",
     cta: "Start with Starter",
     featured: false,
@@ -62,7 +64,8 @@ const packages: PricingPackage[] = [
     name: "Launchpad",
     tagline:
       "For businesses ready for a stronger website built to establish credibility and generate enquiries.",
-    price: "5,000",
+    price: "3,499",
+    originalPrice: "5,000",
     cadence: "Estimated 7–10 business days",
     cta: "Choose Launchpad",
     featured: true,
@@ -98,7 +101,8 @@ const packages: PricingPackage[] = [
     name: "Transmutation",
     tagline:
       "For businesses that need functionality beyond a standard marketing website.",
-    price: "From 12,500",
+    price: "From 8,999",
+    originalPrice: "From 12,500",
     cadence: "Estimated 4–8 weeks",
     discoverySprint:
       "Final pricing is confirmed after discovery and depends on features, integrations and complexity.",
@@ -131,7 +135,8 @@ const packages: PricingPackage[] = [
     name: "Custom systems",
     tagline:
       "For organisations requiring custom digital systems or complex software architecture.",
-    price: "From 25,000",
+    price: "From 19,999",
+    originalPrice: "From 25,000",
     cadence: "Final proposal after technical discovery",
     cta: "Discuss a Custom System",
     featured: false,
@@ -214,24 +219,38 @@ const carePlans = [
   },
 ];
 
-const renderPrice = (price: string, period?: string) => {
-  const displayPrice = price.startsWith("From ")
-    ? price.replace("From ", "From R")
-    : `R${price}`;
+const formatPrice = (price: string) =>
+  price.startsWith("From ") ? price.replace("From ", "From R") : `R${price}`;
 
-  return (
-    <div className="pricing-price">
-      <strong>{displayPrice}</strong>
-      {period ? <small>{period}</small> : null}
-    </div>
-  );
-};
+const renderPrice = (price: string, period?: string, originalPrice?: string) => (
+  <div className="pricing-price">
+    <strong>{formatPrice(price)}</strong>
+    {originalPrice ? (
+      <span style={{ display: "inline-flex", flexWrap: "wrap", alignItems: "center", gap: "8px", marginLeft: "10px", fontSize: "0.85rem", color: "var(--muted, #9aa4ad)" }}>
+        <del>{formatPrice(originalPrice)}</del>
+        <span style={{ color: "var(--gold-bright, #e7bd62)", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase" }}>Black Friday</span>
+      </span>
+    ) : null}
+    {period ? <small>{period}</small> : null}
+  </div>
+);
 
 export function PricingSection() {
   return (
     <section className="pricing" id="pricing" aria-labelledby="pricing-title">
       <div className="pricing-aura" aria-hidden="true" />
       <div className="shell">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "20px", alignItems: "center", marginBottom: "36px", padding: "clamp(22px, 4vw, 38px)", border: "1px solid rgba(0, 245, 255, 0.28)", borderRadius: "22px", background: "linear-gradient(115deg, rgba(0, 245, 255, 0.09), rgba(143, 82, 255, 0.12), rgba(255, 190, 75, 0.08))", boxShadow: "0 18px 60px rgba(0,0,0,0.18)" }}>
+          <div>
+            <p className="eyebrow"><span aria-hidden="true" /> 27–30 November 2026 · Limited Black Friday bookings</p>
+            <h2 style={{ margin: "10px 0", fontSize: "clamp(1.8rem, 4vw, 3rem)", lineHeight: 1.05 }}>Make your next move <strong style={{ display: "block", color: "var(--gold-bright, #e7bd62)" }}>a digital one.</strong></h2>
+            <p style={{ maxWidth: "650px", margin: 0 }}>Four ways to get your business online, work smarter and build credibility — at special once-off project rates. Secure your booking with a 50% deposit.</p>
+          </div>
+          <div style={{ textAlign: "center", minWidth: "112px", padding: "16px", border: "1px solid rgba(255,255,255,0.16)", borderRadius: "16px", background: "rgba(0,0,0,0.18)" }}>
+            <strong style={{ display: "block", fontSize: "2rem", lineHeight: 1, color: "var(--gold-bright, #e7bd62)" }}>4</strong>
+            <span style={{ display: "block", marginTop: "7px", fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>Days only</span>
+          </div>
+        </div>
         <div className="pricing-heading">
           <p className="eyebrow">
             <span aria-hidden="true" />
@@ -261,7 +280,7 @@ export function PricingSection() {
                 <span className="pricing-tier">{item.tier}</span>
                 <h3>{item.name}</h3>
                 <p>{item.tagline}</p>
-                {renderPrice(item.price, item.period)}
+                {renderPrice(item.price, item.period, item.originalPrice)}
                 {item.priceUsd && <p className="pricing-price-usd">{item.priceUsd}</p>}
                 <p className="pricing-cadence">{item.cadence}</p>
               </header>
@@ -395,7 +414,7 @@ export function PricingSection() {
         </div>
 
         <p className="pricing-scope-note">
-          All projects require an agreed scope and deposit before work begins. Additional requests outside the approved scope are quoted separately.
+          Black Friday rates apply to bookings confirmed from 27–30 November 2026, subject to availability. A 50% deposit secures the booking; the balance is due before deployment. Each project requires an approved written scope. Domains, hosting, paid third-party services and subscriptions are excluded unless stated in the proposal. Additional requests outside the agreed scope are quoted separately.
         </p>
 
         <p className="pricing-terms">
