@@ -9,6 +9,7 @@ const navigation = [
   { label: "Home", href: "/#home" },
   { label: "Systems", href: "/#featured-builds" },
   { label: "Services", href: "/#services" },
+  { label: "ECD websites", href: "/ecd-websites" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Client intake", href: "/client-intake" },
   { label: "Client support", href: "/client-support" },
